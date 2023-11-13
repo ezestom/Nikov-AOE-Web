@@ -1,4 +1,7 @@
 ---
+import Header from "../components/Nikov.astro";
+import Switch from "../components/Switch.astro";
+import WaterBrand from "../components/WaterBrand.astro";
 interface Props {
 	title: string;
 }
@@ -10,14 +13,18 @@ const { title } = Astro.props;
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="description" content="Nikov AOE Professional Player" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
 	<body>
-		<slot />
+		<main>
+			<Switch />
+			<slot />
+			<WaterBrand />
+		</main>
 	</body>
 </html>
 <style is:global>
@@ -26,16 +33,16 @@ const { title } = Astro.props;
 		--accent-light: 224, 204, 250;
 		--accent-dark: 49, 10, 101;
 		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
+			141deg,
+			#202020 0%,
+			white 50%,
+			indigo 100%
 		);
 	}
 	html {
 		font-family: system-ui, sans-serif;
 		background: #13151a;
-		background-size: 224px;
+		/* background-size: 224px; */
 	}
 	code {
 		font-family:
@@ -47,5 +54,11 @@ const { title } = Astro.props;
 			Bitstream Vera Sans Mono,
 			Courier New,
 			monospace;
+	}
+	main {
+		padding: 0;
+		margin: 0;
+		box-sizing: border-box;
+		position: relative;
 	}
 </style>

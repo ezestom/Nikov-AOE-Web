@@ -1,0 +1,55 @@
+---
+import { Image } from "astro:assets";
+import warrior from "../img/warrior5.jpg";
+import nikov from "../img/nikov-title.png";
+---
+
+<section>
+	<article class="header-article">
+		<Image class="img2" src={nikov} alt="nikov" />
+		<Image class="img" src={warrior} alt="warrior" />
+	</article>
+</section>
+
+<style>
+	.header-article {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		width: auto;
+		aspect-ratio: 16 / 9;
+	}
+	.img {
+		max-height: 75%;
+		width: 1000px;
+		border-radius: 8px;
+		object-fit: cover;
+		filter: drop-shadow(0 0 0.3rem #f0f0f0);
+	}
+	.img2 {
+		width: 700px;
+		padding-bottom: 1rem;
+	}
+	section {
+		height: 100vh;
+		width: 100vw;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+	}
+	section::before {
+		z-index: -1;
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-image: url(../img/war1.jpg);
+		background-size: auto;
+		background-position: center;
+		opacity: 0.1;
+	}
+</style>

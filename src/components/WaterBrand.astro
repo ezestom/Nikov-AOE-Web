@@ -1,0 +1,51 @@
+---
+import logoAstro from "../../public/favicon.svg";
+import { Image } from "astro:assets";
+const title = "Create & Design by Eze in 2023 with Astro technology";
+const image = logoAstro;
+const props = { title, image };
+---
+
+<section class="bg-transparent">
+	<a class="water-brand" href="#">
+		<h1 class="text-white text-center text-xs p-1">
+			{title}
+		</h1>
+		<div class="bg-white">
+			<Image class="img" src={image} alt="Astro Logo" />
+		</div>
+	</a>
+</section>
+
+<style>
+	.water-brand {
+		z-index: -1;
+		position: absolute;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		margin: auto;
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		border-radius: 7px;
+		width: 300px;
+		transition: filter 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+		background-color: #23262d;
+	}
+	.water-brand > h1,
+	.water-brand > div > img {
+		color: rgba(255, 255, 255, 0.3);
+	}
+	.water-brand:hover {
+		filter: brightness(1.2);
+		cursor: pointer;
+	}
+	.img {
+		position: absolute;
+		width: 30px;
+		background-color: white;
+		border-radius: 50%;
+		bottom: -0.65rem;
+		right: -1.65rem;
+		transform: rotate(25deg);
+	}
+</style>
