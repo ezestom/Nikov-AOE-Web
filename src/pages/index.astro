@@ -4,6 +4,7 @@ import Card from "../components/Card.astro";
 import { Image } from "astro:assets";
 import wallpaper from "../img/nikov-redbull.jpg";
 import TwitchPlayer from "../components/TwitchPlayer.astro";
+import YouTube from "../components/Youtube.astro";
 import Welcome from "../components/Welcome.astro";
 ---
 
@@ -11,8 +12,15 @@ import Welcome from "../components/Welcome.astro";
 	<Welcome />
 	<section class="h-screen p-0 m-0 w-screen flex items-center justify-center">
 		<ul
-			class="grid grid-cols-6 grid-rows-5 gap-4 max-h-[80%] max-w-[1000px]">
-			<li class="col-span-4 row-span-1 rounded-lg">
+			class="grid grid-cols-6 grid-rows-5 gap-5 max-h-[80%] max-w-[1000px]">
+			<li class="col-span-3 row-span-1 rounded-lg">
+				<Card
+					href={"/"}
+					title="Twitch"
+					body={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumaut fugit cumque repudiandae voluptatibus sint repellat quisas asddsd asdsadsaa asdsadsas adsad"}
+				/>
+			</li>
+			<li class="col-span-1 row-span-1 rounded-lg">
 				<Card
 					href={"/"}
 					title="Twitch"
@@ -26,13 +34,7 @@ import Welcome from "../components/Welcome.astro";
 					alt="wallpaper-redbull-nikov"
 				/>
 			</li>
-			<li class="col-span-1 row-span-2 rounded-lg">
-				<Card
-					href={"/"}
-					title="Twitch"
-					body={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumaut fugit cumque repudiandae voluptatibus sint repellat quisas asddsd asdsadsaa asdsadsas adsad"}
-				/>
-			</li>
+
 
 			<li class="col-span-3 row-span-2 rounded-lg">
 				<Card
@@ -40,9 +42,17 @@ import Welcome from "../components/Welcome.astro";
 					title="Twitch"
 					body={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumaut fugit cumque repudiandae voluptatibus sint repellat quisas asddsd asdsadsaa asdsadsas adsad"}
 				/>
+				</li>
+				<li class="col-span-1 row-span-2 rounded-lg">
+					<Card
+						href={"/"}
+						title="Twitch"
+						body={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumaut fugit cumque repudiandae voluptatibus sint repellat quisas asddsd asdsadsaa asdsadsas adsad"}
+					/>
+				</li>
 
 				<li class="col-span-3 row-span-2 rounded-lg">
-					<TwitchPlayer />
+					<YouTube />
 				</li>
 				<li class="col-span-1 row-span-1 rounded-lg">
 					<Card
@@ -61,8 +71,29 @@ import Welcome from "../components/Welcome.astro";
 			</li>
 		</ul>
 	</section>
+	</Layout>
 
 	<style>
+		@media ( width < 900px){
+			section{
+				height: 100%;
+				width: 100%;
+			}
+			ul {
+				max-height: 100%;
+				width: 100%;
+				grid-template-columns: 1fr;
+				grid-template-rows: repeat(6, 1fr);
+				padding: 0 2%;
+				margin: 0;	
+				&& li {
+					width: 100%;
+					max-height:150px;
+					grid-column: 1 / 2;
+					grid-row: auto;
+				}			
+			}
+		}
 		li {
 			overflow: hidden;
 		}
@@ -89,4 +120,4 @@ import Welcome from "../components/Welcome.astro";
 			opacity: 0.1;
 		}
 	</style>
-</Layout>
+

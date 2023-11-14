@@ -1,13 +1,16 @@
 ---
 import { Image } from "astro:assets";
 import warrior from "../img/warrior5.jpg";
-import nikov from "../img/nikov-title.png";
+import nicov from "../img/nicov-title.png";
 ---
 
 <section>
 	<article class="header-article">
-		<Image class="img2" src={nikov} alt="nikov" />
+		<Image class="img2" src={nicov} alt="nicov" />
 		<Image class="img" src={warrior} alt="warrior" />
+		<div class="scroll-container">
+			<span class="text-white py-5">aca va el scroll</span>
+		</div>
 	</article>
 </section>
 
@@ -22,14 +25,25 @@ import nikov from "../img/nikov-title.png";
 	}
 	.img {
 		max-height: 75%;
-		width: 1000px;
+		max-width: 1000px;
 		border-radius: 8px;
 		object-fit: cover;
-		filter: drop-shadow(0 0 0.3rem #f0f0f0);
+		background-image: radial-gradient(
+			circle,
+			rgba(0, 0, 0, 0.8) 50%,
+			transparent 100%
+		);
+		mask: radial-gradient(circle at center, white 50%, transparent 100%);
 	}
 	.img2 {
 		width: 700px;
-		padding-bottom: 1rem;
+		padding: 1rem;
+		padding-top: 0;
+		transition: all 0.5s ease;
+	}
+	.img2:hover {
+		filter: drop-shadow(0 0 0.1em crimson);
+		transition: all 0.5s ease;
 	}
 	section {
 		height: 100vh;
@@ -51,5 +65,8 @@ import nikov from "../img/nikov-title.png";
 		background-size: auto;
 		background-position: center;
 		opacity: 0.1;
+	}
+	.scroll {
+		color: red;
 	}
 </style>
