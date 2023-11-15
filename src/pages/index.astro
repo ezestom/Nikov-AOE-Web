@@ -3,28 +3,32 @@ import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import { Image } from "astro:assets";
 import wallpaper from "../img/nikov-redbull.jpg";
-import TwitchPlayer from "../components/TwitchPlayer.astro";
+import TwitchPlayer from "../components/TwitchPlayer.jsx";
 import YouTube from "../components/Youtube.astro";
 import Welcome from "../components/Welcome.astro";
 ---
 
-<Layout title="Nikov AOE">
+<Layout title="Nicov AOE">
 	<Welcome />
 	<section class="h-screen p-0 m-0 w-screen flex items-center justify-center">
 		<ul
 			class="grid grid-cols-6 grid-rows-5 gap-5 max-h-[80%] max-w-[1000px]">
 			<li class="col-span-3 row-span-1 rounded-lg">
 				<Card
-					href={"/"}
-					title="Twitch"
-					body={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumaut fugit cumque repudiandae voluptatibus sint repellat quisas asddsd asdsadsaa asdsadsas adsad"}
+					href={"/About"}
+					titleEng="About"
+					titleEsp="Sobre"
+					bodyEng="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumaut fugit cumque repudiandae voluptatibus sint repellat quisas asddsd asdsadsaa asdsadsas adsad"
+					bodyEsp="Nicov first started playing Age of Empires II in 2001 or 2002, mostly playing Death Match and Custom Scenario. After taking a break from the game in 2006, he returned in 2011 when he started playing the Random Map game mode.[1] In 2014, Nicov joined the Argentinian clan Dreamers (zZ).Nicov's first tournament success came in 2014 when he took a shared fifth place in Veterans of the Clash.[2] That same year, Nicov was part of the Argentinian team that placed third in SY Nations Cup I, together with Fedex, Gary, PaTiN, JuanNNN and Mago.[3]Further success came in 2015 when he won Poisn's Nomadness 1 together with Mentalist.[4] In 2017, he won the Escape Gaming Masters 2 after beating DauT in the grand finals.[5] Nicov has won all three editions of the Argeking Cup: in 2017 and 2019 he won against Twigg in the finals, while in 2018 he beat Fedex.[6]For Battle of Africa (2018), Nicov joined Aftermath. With his new clan, they claimed second place in this tournament after losing to TyRanT (later known as Team Secret) in the grand finals.[7] Aftermath also finished runner-up to Team Secret in the Escape Champions League (2018-19). [8] Nicov was one of the champions in single tournaments inside the ECL, winning against TheMax the final of the Escape Champions League, West Europe, 1v1. Together with MbL and Hera, Nicov won the Two Pools Tournament (2019).[9] In Battle of Africa 2 (2020), Nicov and his teammates defeated Team Secret in the finals.During King of the Desert 3, he made the decision to leave Aftermath as a member, but he still took part in showmatches with his former teammates. Less than a year later, he rejoined.In 2022 he won the 3v3 tournaments Return of the Clans and Battle of Africa 3 with Aftermath, defeating GamerLegion in both finals. He also became the first JorDan's Medieval Brawl champion, successively beating Yo, Vinchester and Villese, with each series decided on the last map."
 				/>
 			</li>
 			<li class="col-span-1 row-span-1 rounded-lg">
 				<Card
 					href={"/"}
-					title="Twitch"
-					body={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumaut fugit cumque repudiandae voluptatibus sint repellat quisas asddsd asdsadsaa asdsadsas adsad"}
+					titleEng="Twitch"
+					titleEsp="Twitch"
+					bodyEng="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumaut fugit cumque repudiandae voluptatibus sint repellat quisas asddsd asdsadsaa asdsadsas adsad"
+					bodyEsp="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumaut fugit cumque repudiandae voluptatibus sint repellat quisas asddsd asdsadsaa asdsadsas adsad"
 				/>
 			</li>
 			<li class="col-span-2 row-span-4 rounded-lg">
@@ -35,47 +39,53 @@ import Welcome from "../components/Welcome.astro";
 				/>
 			</li>
 
-
 			<li class="col-span-3 row-span-2 rounded-lg">
 				<Card
 					href={"/"}
-					title="Twitch"
-					body={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumaut fugit cumque repudiandae voluptatibus sint repellat quisas asddsd asdsadsaa asdsadsas adsad"}
+					titleEng="Twitch"
+					titleEsp="Twitch"
+					bodyEng="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumaut fugit cumque repudiandae voluptatibus sint repellat quisas asddsd asdsadsaa asdsadsas adsad"
+					bodyEsp="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumaut fugit cumque repudiandae voluptatibus sint repellat quisas asddsd asdsadsaa asdsadsas adsad"
 				/>
-				</li>
-				<li class="col-span-1 row-span-2 rounded-lg">
-					<Card
-						href={"/"}
-						title="Twitch"
-						body={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumaut fugit cumque repudiandae voluptatibus sint repellat quisas asddsd asdsadsaa asdsadsas adsad"}
-					/>
-				</li>
+			</li>
+			<li class="col-span-1 row-span-2 rounded-lg">
+				<Card
+					href={"/"}
+					titleEng="Twitch"
+					titleEsp="Twitch"
+					bodyEng="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumaut fugit cumque repudiandae voluptatibus sint repellat quisas asddsd asdsadsaa asdsadsas adsad"
+					bodyEsp="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumaut fugit cumque repudiandae voluptatibus sint repellat quisas asddsd asdsadsaa asdsadsas adsad"
+				/>
+			</li>
 
-				<li class="col-span-3 row-span-2 rounded-lg">
-					<YouTube />
-				</li>
-				<li class="col-span-1 row-span-1 rounded-lg">
-					<Card
-						href={"/"}
-						title="Twitch"
-						body={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumaut fugit cumque repudiandae voluptatibus sint repellat quisas asddsd asdsadsaa asdsadsas adsad"}
-					/>
-				</li>
+			<li class="video col-span-3 row-span-2 rounded-lg">
+				{<TwitchPlayer /> === true ? <TwitchPlayer /> : <YouTube />}
+			</li>
+
+			<li class="col-span-1 row-span-1 rounded-lg">
+				<Card
+					href={"/"}
+					titleEng="Twitch"
+					titleEsp="Twitch"
+					bodyEng="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumaut fugit cumque repudiandae voluptatibus sint repellat quisas asddsd asdsadsaa asdsadsas adsad"
+					bodyEsp="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumaut fugit cumque repudiandae voluptatibus sint repellat quisas asddsd asdsadsaa asdsadsas adsad"
+				/>
 				<li class="col-span-3 row-span-1 rounded-lg">
 					<Card
 						href={"/"}
-						title="Twitch"
-						body={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumaut fugit cumque repudiandae voluptatibus sint repellat quisas asddsd asdsadsaa asdsadsas adsad"}
+						titleEng="Twitch"
+						titleEsp="Twitch"
+						bodyEng="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumaut fugit cumque repudiandae voluptatibus sint repellat quisas asddsd asdsadsaa asdsadsas adsad"
+						bodyEsp="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumaut fugit cumque repudiandae voluptatibus sint repellat quisas asddsd asdsadsaa asdsadsas adsad"
 					/>
 				</li>
 			</li>
 		</ul>
 	</section>
-	</Layout>
 
 	<style>
-		@media ( width < 900px){
-			section{
+		@media (width < 1000px) {
+			section {
 				height: 100%;
 				width: 100%;
 			}
@@ -85,13 +95,13 @@ import Welcome from "../components/Welcome.astro";
 				grid-template-columns: 1fr;
 				grid-template-rows: repeat(6, 1fr);
 				padding: 0 2%;
-				margin: 0;	
-				&& li {
-					width: 100%;
-					max-height:150px;
-					grid-column: 1 / 2;
-					grid-row: auto;
-				}			
+				margin: 0;
+			}
+			li {
+				width: 100%;
+				max-height: 150px;
+				grid-column: 1 / 2;
+				grid-row: auto;
 			}
 		}
 		li {
@@ -106,18 +116,20 @@ import Welcome from "../components/Welcome.astro";
 			font-size: 20px;
 		}
 
-		section::before {
-			z-index: -1;
-			content: "";
-			position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-			background-image: url(../img/warrior.png);
-			background-size: cover;
-			background-position: center;
-			opacity: 0.1;
+		.video:hover {
+			filter: drop-shadow(0px 0px 10px crimson);
+			animation: pulse 4s infinite ease;
+		}
+		@keyframes pulse {
+			0% {
+				filter: drop-shadow(0px 0px 0.1px crimson);
+			}
+			50% {
+				filter: drop-shadow(0px 0px 0.5em crimson);
+			}
+			100% {
+				filter: drop-shadow(0px 0px 0.1px crimson);
+			}
 		}
 	</style>
-
+</Layout>

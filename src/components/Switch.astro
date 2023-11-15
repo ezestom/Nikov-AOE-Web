@@ -1,13 +1,13 @@
 <div class="checkbox-wrapper-10">
 	<input checked="" type="checkbox" id="cb5" class="tgl tgl-flip" />
-	<label for="cb5" data-tg-on="Esp" data-tg-off="Eng" class="tgl-btn"></label>
+	<label for="cb5" data-tg-on="Eng" data-tg-off="Esp" class="tgl-btn"></label>
 </div>
 
 <style>
 	.checkbox-wrapper-10 {
 		position: fixed;
 		right: 1rem;
-		top: 1rem;
+		top: 2rem;
 		z-index: 10;
 	}
 	.checkbox-wrapper-10 .tgl {
@@ -61,7 +61,7 @@
 		content: "";
 		width: 50%;
 		height: 100%;
-      filter:drop-shadow(0px 0px 2px rgba(255,255,255,0.5));
+		filter: drop-shadow(0px 0px 2px rgba(255, 255, 255, 0.5));
 	}
 
 	.checkbox-wrapper-10 .tgl + .tgl-btn:after {
@@ -108,7 +108,7 @@
 	}
 
 	.checkbox-wrapper-10 .tgl-flip + .tgl-btn:before {
-		background: #4e0101;
+		background: #08135e;
 		content: attr(data-tg-off);
 	}
 
@@ -123,7 +123,8 @@
 	.checkbox-wrapper-10 .tgl-flip:checked + .tgl-btn:after {
 		transform: rotateY(0);
 		left: 0;
-		background: #08135e;
+
+		background: #4e0101;
 	}
 
 	.checkbox-wrapper-10 .tgl-flip:checked + .tgl-btn:active:after {
