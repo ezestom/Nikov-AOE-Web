@@ -5,17 +5,9 @@ interface Props {
 	href: () => void;
 }
 const { title, body, href } = Astro.props;
-
-const handleClick = (e: Event) => {
-	e.preventDefault();
-	console.log("clicked");
-	window.history.back();
-	window.scrollTo(0, 0);
-};
 ---
 
-<section
-	class="p-0 m-0 h-screen w-screen gap-5 flex items-center justify-center">
+<section class="w-screen h-screen flex items-center justify-center">
 	<article
 		class="article-info grid grid-cols-6 grid-rows-5 gap-5 h-[80%] w-[1000px]">
 		<div class="col-span-6 row-span-3 flex items-center justify-center">
@@ -24,17 +16,30 @@ const handleClick = (e: Event) => {
 			</p>
 		</div>
 		<div class="video-space col-span-3 row-span-2 bg-yellow-200"></div>
-		<div class="col-span-3 row-span-2 flex items-center justify-center relative">
+		<div
+			class="col-span-3 row-span-2 flex items-center justify-center relative">
 			<h2 class="text-5xl text-center text-slate-100">
 				About {title}
 			</h2>
 			<div
 				class="flex items-center justify-center absolute bottom-0 right-0">
-				<button
-					class="bg-slate-100 text-black-50 p-2 rounded-md"
-					onclick={handleClick}>
-					Back
-				</button>
+				<a
+					class="bg-slate-100 text-black-50 p-2 flex justify-center items-center gap-1 rounded-md"
+					href="/">
+					<svg
+						width="24"
+						height="24"
+						viewBox="0 0 24 24"
+						stroke-width="2"
+						stroke="currentColor"
+						fill="none"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						><path stroke="none" d="M0 0h24v24H0z" fill="none"
+						></path><path d="M9 14l-4 -4l4 -4"></path><path
+							d="M5 10h11a4 4 0 1 1 0 8h-1"></path></svg
+					><span>Back</span>
+				</a>
 			</div>
 		</div>
 	</article>

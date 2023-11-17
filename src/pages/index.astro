@@ -6,16 +6,18 @@ import wallpaper from "../img/nikov-redbull.jpg";
 import TwitchPlayer from "../components/TwitchPlayer.jsx";
 import YouTube from "../components/Youtube.astro";
 import Welcome from "../components/Welcome.astro";
+import Api from "../components/Api.astro";
 ---
 
 <Layout title="Nicov AOE">
 	<Welcome />
+
 	<section class="h-screen p-0 m-0 w-screen flex items-center justify-center">
 		<ul
 			class="grid grid-cols-6 grid-rows-5 gap-5 max-h-[80%] max-w-[1000px]">
 			<li class="col-span-3 row-span-1 rounded-lg">
 				<Card
-					href={"/About"}
+					href={"/about"}
 					titleEng="About"
 					titleEsp="Sobre"
 					bodyEng="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumaut fugit cumque repudiandae voluptatibus sint repellat quisas asddsd asdsadsaa asdsadsas adsad"
@@ -33,9 +35,9 @@ import Welcome from "../components/Welcome.astro";
 			</li>
 			<li class="col-span-2 row-span-4 rounded-lg">
 				<Image
-					class={"w-full h-full object-cover  "}
+					class={"w-full h-full object-cover border-dotted border-2 border-gray-700 rounded-lg "}
 					src={wallpaper}
-					alt="wallpaper-redbull-nikov"
+					alt="wallpaper-redbull-nicov"
 				/>
 			</li>
 
@@ -81,6 +83,7 @@ import Welcome from "../components/Welcome.astro";
 				</li>
 			</li>
 		</ul>
+		<Api/>
 	</section>
 
 	<style>

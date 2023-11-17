@@ -6,20 +6,21 @@ const image = logoAstro;
 const props = { title, image };
 ---
 
-<section class="bg-transparent">
-	<a class="water-brand text-white text-center text-xs p-1 w-full" href="#">
-		<h1 class="">
-			{title}
-		</h1>
-		<div class="bg-white">
-			<Image class="img" src={image} alt="Astro Logo" />
-		</div>
+<a
+	class="water-brand text-white text-center text-xs p-1 w-full"
+	href="https://ezestom.github.io/portfolio/"
+	target="_blank">
+	<p class="">
+		{title}
+	</p>
+
+	<a href="https://astro.build/" target="_blank">
+		<Image class="img" src={image} alt="Astro Logo" />
 	</a>
-</section>
+</a>
 
 <style>
 	.water-brand {
-		z-index: -1;
 		position: absolute;
 		right: 0;
 		left: 0;
@@ -27,25 +28,42 @@ const props = { title, image };
 		margin: auto;
 		border: 1px solid rgba(255, 255, 255, 0.1);
 		border-radius: 7px;
-		width: 300px;
+		width: 310px;
 		transition: filter 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 		background-color: #23262d;
 	}
-	.water-brand > h1,
+	.water-brand > p,
 	.water-brand > div > img {
 		color: rgba(255, 255, 255, 0.3);
 	}
 	.water-brand:hover {
-		filter: brightness(1.2);
+		filter: brightness(1.2) drop-shadow(0 0 0.1rem crimson);
 		cursor: pointer;
 	}
 	.img {
 		position: absolute;
+		right: 0;
+		left: 21rem;
+		margin: auto;
+		bottom: 0.75rem;
 		width: 30px;
 		background-color: white;
 		border-radius: 50%;
-		bottom: -0.65rem;
-		right: -1.65rem;
 		transform: rotate(25deg);
+		transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+		animation: color;
+	}
+	.img:hover {
+		transform: rotate(0deg) scale(1.3);
+		filter: drop-shadow(0 0 0.1rem crimson);
+		background-color: #4e0101;
+	}
+	@keyframes color {
+		to 0% {
+			background-color: white;
+		}
+		to 100% {
+			background-color: crimson;
+		}
 	}
 </style>
