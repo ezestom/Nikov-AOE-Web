@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import warrior from "../img/warrior5.jpg";
 import nicov from "../img/nicov-title.png";
 
-const scrollToBottom = () => {
+const scrollToBottom = (): void => {
 	console.log("Scrolling to bottom");
 	window.scrollTo({
 		top: document.body.scrollHeight,
@@ -12,28 +12,28 @@ const scrollToBottom = () => {
 };
 ---
 
-<section>
+<section class="h-screen">
 	<article class="header-article">
-		<Image class="img2" src={nicov} alt="nicov" />
-		<Image class="img" src={warrior} alt="warrior" />
+		<Image class="nicov" src={nicov} alt="nicov" />
+		<Image class="warrior" src={warrior} alt="warrior" />
 		<button
-			class="absolute bottom-5 text-white border-spacing-10 border p-1 ">scroll</button
+			class="absolute bottom-5 text-white border-spacing-10 border p-1"
+			>scroll</button
 		>
 	</article>
 </section>
 
 <style>
-	.header-article {
+	section {
 		position: relative;
-		width: 100%;
+		width: 100vw;
 		height: 100vh;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		overflow: hidden;
 	}
-	.img {
-		object-fit: cover;
+	.warrior {
 		background-image: radial-gradient(
 				circle,
 				rgba(0, 0, 0, 0.8) 50%,
@@ -42,23 +42,22 @@ const scrollToBottom = () => {
 			radial-gradient(circle, transparent 0%, rgba(0, 0, 0, 0.8) 50%),
 			linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),
 			linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
-		mask: radial-gradient(circle at center, white 15%, transparent 50%);
+		mask: radial-gradient(circle at center, white 15%, transparent 65%);
 	}
-	.img2 {
+	.nicov {
 		width: 100%;
-		transition: all 0.5s ease;
-		max-width: 500px;
+		max-width: 375px;
 		position: absolute;
 		z-index: 1;
-		top: 0;
-		left: 0;
+		top: 1rem;
+		left: 1rem;
+		transition: all 1s ease-in-out;
 	}
-	.img2:hover {
-		filter: drop-shadow(0 0 0.1em crimson);
-		transition: all 0.5s ease;
+
+	.nicov:hover {
+		filter: drop-shadow(0 0 0.1em crimson) brightness(1.5);
 	}
-	section {
-	}
+
 	section::before {
 		z-index: -1;
 		content: "";
@@ -69,8 +68,8 @@ const scrollToBottom = () => {
 		left: 0;
 		background-image: url(../img/war1.jpg);
 		background-size: cover;
-		background-position: center;
-		opacity: 0.2;
-		height: 100vh;
+		background-position: unset;
+		height: 100%;
+		width: 100%;
 	}
 </style>
