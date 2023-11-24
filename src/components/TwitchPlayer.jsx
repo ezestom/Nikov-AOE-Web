@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
+import { Youtube } from "./Youtube.jsx";
 
 const TwitchPlayer = () => {
 	const [isLive, setIsLive] = useState(false);
+	const [isLoading, setIsLoading] = useState(true);
+	const [error, setError] = useState(null);
 
 	useEffect(() => {
 		const checkLiveStatus = async () => {
@@ -24,7 +27,9 @@ const TwitchPlayer = () => {
 					"Error al obtener información del canal de Twitch:",
 					error
 				);
-				// Tratar el error según tus necesidades
+				setError("No se pudo cargar el canal de Twitch.");
+			} finally {
+				setIsLoading(false);
 			}
 		};
 
@@ -33,23 +38,22 @@ const TwitchPlayer = () => {
 
 	return (
 		<section className="w-full h-full">
-			{isLive ? (
-				<iframe
-					src="https://player.twitch.tv/?channel=nicov_&parent=localhost"
-					frameBorder="0"
-					allowFullScreen="true"
-					scrolling="no"
-					style={{
-						width: "100%",
-						aspectRatio: "16/9",
-						borderRadius: "8px",
-						height: "100%",
-					}}></iframe>
-			) : (
-				<div>El canal no está en vivo.</div>
-			)}
+			{isLive ? <TwitchIframe channel="nicov_" /> : <Youtube />}
 		</section>
 	);
 };
+
+const TwitchIframe = ({ channel }) => (
+	<iframe
+		src={`https://player.twitch.tv/?channel=${channel}&parent=localhost`}
+		frameBorder="0"
+		allowFullScreen={true}
+		style={{
+			width: "100%",
+			aspectRatio: "16/9",
+			borderRadius: "8px",
+			height: "100%",
+		}}></iframe>
+);
 
 export default TwitchPlayer;

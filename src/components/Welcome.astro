@@ -2,24 +2,15 @@
 import { Image } from "astro:assets";
 import warrior from "../img/warrior5.jpg";
 import nicov from "../img/nicov-title.png";
-
-const scrollToBottom = (): void => {
-	console.log("Scrolling to bottom");
-	window.scrollTo({
-		top: document.body.scrollHeight,
-		behavior: "smooth",
-	});
-};
 ---
 
-<section class="h-screen">
+<section class="max-h-screen max-w-screen">
 	<article class="header-article">
-		<Image class="nicov" src={nicov} alt="nicov" />
+		<a href="/home" > 
+			<Image class="nicov" src={nicov} alt="nicov" />
+			<code class="text-white text-xs absolute bottom-0 left-0">Click Nicov to go Home <span>&rarr;</span> </code>
+		</a>
 		<Image class="warrior" src={warrior} alt="warrior" />
-		<button
-			class="absolute bottom-5 text-white border-spacing-10 border p-1"
-			>scroll</button
-		>
 	</article>
 </section>
 
@@ -34,6 +25,9 @@ const scrollToBottom = (): void => {
 		overflow: hidden;
 	}
 	.warrior {
+		min-width: 1600px;
+		height: 100vh;
+		overflow-y: hidden;
 		background-image: radial-gradient(
 				circle,
 				rgba(0, 0, 0, 0.8) 50%,
@@ -46,30 +40,29 @@ const scrollToBottom = (): void => {
 	}
 	.nicov {
 		width: 100%;
-		max-width: 375px;
+		max-width: 600px;
 		position: absolute;
 		z-index: 1;
 		top: 1rem;
 		left: 1rem;
-		transition: all 1s ease-in-out;
+		transition: all .5s ease-in-out;
+		view-transition-name: nicov;
+		filter: drop-shadow(0 0 .05em crimson) brightness(1.3);
 	}
 
 	.nicov:hover {
-		filter: drop-shadow(0 0 0.1em crimson) brightness(1.5);
+		filter: drop-shadow(0 0 .5em crimson) brightness(1.5);
 	}
 
 	section::before {
 		z-index: -1;
 		content: "";
 		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
 		background-image: url(../img/war1.jpg);
+		view-transition-name: fade;
 		background-size: cover;
-		background-position: unset;
+		background-position: bottom;
 		height: 100%;
-		width: 100%;
+		width: 100%;		
 	}
 </style>

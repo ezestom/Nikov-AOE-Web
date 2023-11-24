@@ -1,13 +1,15 @@
 ---
-interface Props {
-	title: string;
-	body: string;
-	href: () => void;
-}
-const { title, body, href } = Astro.props;
+import Button from "./Button.jsx";
+import {Image} from  "astro:assets"
+import nicov from "../img/nicov-title.png"
+
+const {title, body} = Astro.props;
 ---
 
-<section class="w-screen h-screen flex items-center justify-center">
+<section class="flex items-center justify-center ">
+		<a href= "/">
+			<Image src={nicov} alt="nicov" class="nicov"	/>
+		</a>
 	<article
 		class="article-info grid grid-cols-6 grid-rows-5 gap-5 h-[80%] w-[1000px]">
 		<div class="col-span-6 row-span-3 flex items-center justify-center">
@@ -20,26 +22,10 @@ const { title, body, href } = Astro.props;
 			class="col-span-3 row-span-2 flex items-center justify-center relative">
 			<h2 class="text-5xl text-center text-slate-100">
 				About {title}
+				<!-- <Button client:visible /> -->
 			</h2>
 			<div
 				class="flex items-center justify-center absolute bottom-0 right-0">
-				<a
-					class="bg-slate-100 text-black-50 p-2 flex justify-center items-center gap-1 rounded-md"
-					href="/">
-					<svg
-						width="24"
-						height="24"
-						viewBox="0 0 24 24"
-						stroke-width="2"
-						stroke="currentColor"
-						fill="none"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						><path stroke="none" d="M0 0h24v24H0z" fill="none"
-						></path><path d="M9 14l-4 -4l4 -4"></path><path
-							d="M5 10h11a4 4 0 1 1 0 8h-1"></path></svg
-					><span>Back</span>
-				</a>
 			</div>
 		</div>
 	</article>
@@ -47,11 +33,13 @@ const { title, body, href } = Astro.props;
 
 <style>
 	section {
+		height: 100vh;
+		width: 100vw;
 	}
 	@media (width <1000px) {
 		section {
-			width: 100%;
-			height: 100%;
+			height: 100vh;
+			width: 100vw;
 		}
 	}
 
@@ -63,5 +51,19 @@ const { title, body, href } = Astro.props;
 		background-position: 100%;
 		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+	}
+	.nicov {
+		width: 275px;
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		right: 0;
+		transition: all .5s ease-in-out;
+		view-transition-name: nicov;		
+		filter: drop-shadow(0 0 .05em crimson) brightness(1.2);
+	}
+
+	.nicov:hover {
+		filter: drop-shadow(0 0 .3em crimson) brightness(1.5);
 	}
 </style>

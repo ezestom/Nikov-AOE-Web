@@ -1,0 +1,164 @@
+---
+import Card from "../components/Card.astro";
+import { Image } from "astro:assets";
+import wallpaper from "../img/nikov-redbull.jpg";
+import Layout from "../layouts/Layout.astro";
+import nicov from "../img/nicov-title.png";
+import { Youtube } from "../components/Youtube.jsx";
+import Switch from "../components/Switch.astro";
+import twitch from "../icons/twitch.svg";
+---
+
+<Layout title="Inicio">
+	<section class="h-screen p-0 m-0 w-screen flex items-center justify-center">
+		<a href="/">
+			<Image src={nicov} alt="nicov" class="nicov" />
+		</a>
+		<Switch />
+
+		<ul
+			class="grid grid-cols-6 grid-rows-5 gap-3 max-h-[80vh] max-w-[1000px] z-20">
+			<li class="col-span-3 row-span-1 rounded-lg">
+				<Card
+					href="about"
+					titleEng="About"
+					titleEsp="Sobre"
+					bodyEng="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumaut fugit cumque repudiandae voluptatibus sint repellat quisas asddsd asdsadsaa asdsadsas adsad"
+					bodyEsp="Nicov first started playing Age of Empires II in 2001 or 2002, mostly playing Death Match and Custom Scenario. After taking a break from the game in 2006, he returned in 2011 when he started playing the Random Map game mode.[1] In 2014, Nicov joined the Argentinian clan Dreamers (zZ).Nicov's first tournament success came in 2014 when he took a shared fifth place in Veterans of the Clash.[2] That same year, Nicov was part of the Argentinian team that placed third in SY Nations Cup I, together with Fedex, Gary, PaTiN, JuanNNN and Mago.[3]Further success came in 2015 when he won Poisn's Nomadness 1 together with Mentalist.[4] In 2017, he won the Escape Gaming Masters 2 after beating DauT in the grand finals.[5] Nicov has won all three editions of the Argeking Cup: in 2017 and 2019 he won against Twigg in the finals, while in 2018 he beat Fedex.[6]For Battle of Africa (2018), Nicov joined Aftermath. With his new clan, they claimed second place in this tournament after losing to TyRanT (later known as Team Secret) in the grand finals.[7] Aftermath also finished runner-up to Team Secret in the Escape Champions League (2018-19). [8] Nicov was one of the champions in single tournaments inside the ECL, winning against TheMax the final of the Escape Champions League, West Europe, 1v1. Together with MbL and Hera, Nicov won the Two Pools Tournament (2019).[9] In Battle of Africa 2 (2020), Nicov and his teammates defeated Team Secret in the finals.During King of the Desert 3, he made the decision to leave Aftermath as a member, but he still took part in showmatches with his former teammates. Less than a year later, he rejoined.In 2022 he won the 3v3 tournaments Return of the Clans and Battle of Africa 3 with Aftermath, defeating GamerLegion in both finals. He also became the first JorDan's Medieval Brawl champion, successively beating Yo, Vinchester and Villese, with each series decided on the last map."
+				/>
+			</li>
+			<li class="col-span-1 row-span-1 rounded-lg">
+				<Card
+					href={"/"}
+					titleEng="Twitch"
+					titleEsp="Twitch"
+					bodyEng="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumaut fugit cumque repudiandae voluptatibus sint repellat quisas asddsd asdsadsaa asdsadsas adsad"
+					bodyEsp="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumaut fugit cumque repudiandae voluptatibus sint repellat quisas asddsd asdsadsaa asdsadsas adsad"
+				/>
+			</li>
+			<li class="col-span-2 row-span-4 rounded-lg">
+				<Image
+					class={"w-full h-full object-cover border-dotted border-2 border-gray-700 rounded-lg "}
+					src={wallpaper}
+					alt="wallpaper-redbull-nicov"
+				/>
+			</li>
+
+			<li class="col-span-3 row-span-2 rounded-lg">
+				<Card
+					href={"/"}
+					titleEng="Twitch"
+					titleEsp="Twitch"
+					bodyEng="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumaut fugit cumque repudiandae voluptatibus sint repellat quisas asddsd asdsadsaa asdsadsas adsad"
+					bodyEsp="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumaut fugit cumque repudiandae voluptatibus sint repellat quisas asddsd asdsadsaa asdsadsas adsad"
+				/>
+			</li>
+			<li class="col-span-1 row-span-1 rounded-lg">
+				<Card
+					href={"/"}
+					titleEng="Twitch"
+					titleEsp="Twitch"
+					bodyEng="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumaut fugit cumque repudiandae voluptatibus sint repellat quisas asddsd asdsadsaa asdsadsas adsad"
+					bodyEsp="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumaut fugit cumque repudiandae voluptatibus sint repellat quisas asddsd asdsadsaa asdsadsas adsad"
+				/>
+			</li>
+			<li class="twitch social col-span-1 row-span-1 rounded-lg">
+				<Card
+					titleEng="Twitch"
+					titleEsp="Twitch"
+					href="https://www.twitch.tv/nicov_"
+					bodyEsp="Ve a Nicov en Twitch"
+					bodyEng="Watch Nicov on Twitch"
+				/>
+			</li>
+
+			<li class="video col-span-3 row-span-2 rounded-lg">
+				<!-- <TwitchPlayer client:visible /> -->
+				<!-- <Youtube client:visible transition:persist /> -->
+
+				<li class="discord social col-span-1 row-span-1 rounded-lg">
+					<a href="/#"> </a>
+				</li>
+				<li class="col-span-3 row-span-1 rounded-lg">
+					<Card
+						href={"/"}
+						titleEng="Twitch"
+						titleEsp="Twitch"
+						bodyEng="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumaut fugit cumque repudiandae voluptatibus sint repellat quisas asddsd asdsadsaa asdsadsas adsad"
+						bodyEsp="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumaut fugit cumque repudiandae voluptatibus sint repellat quisas asddsd asdsadsaa asdsadsas adsad"
+					/>
+				</li>
+			</li>
+		</ul>
+	</section>
+</Layout>
+
+<style>
+	@media (width < 1000px) {
+		section {
+			height: 100%;
+			width: 100%;
+		}
+		ul {
+			grid-template-columns: 1fr;
+			grid-template-rows: repeat(6, 1fr);
+			padding: 0 2%;
+			margin: 0;
+		}
+		li {
+			width: 100%;
+			max-height: 150px;
+			grid-column: 1 / 2;
+			grid-row: auto;
+		}
+	}
+
+	.nicov {
+		width: 275px;
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		right: 0;
+		transition: all 0.5s ease-in-out;
+		view-transition-name: nicov;
+		filter: drop-shadow(0 0 0.05em crimson) brightness(1.2);
+	}
+
+	.nicov:hover {
+		filter: drop-shadow(0 0 0.3em crimson) brightness(1.5);
+	}
+	li {
+		overflow: hidden;
+	}
+	section {
+		position: relative;
+		box-sizing: border-box;
+		padding: 0;
+		margin: 0;
+		color: white;
+		font-size: 20px;
+		max-width: 100vw;
+		max-height: 100vh;
+	}
+	.video {
+		overflow: hidden;
+		background-color: rgba(255, 255, 255, 0.1);
+		display: grid;
+		align-items: center;
+	}
+	.video:hover {
+		filter: drop-shadow(0px 0px 10px crimson);
+		animation: pulse 4s infinite ease;
+	}
+	@keyframes pulse {
+		0% {
+			filter: drop-shadow(0px 0px 0.1px crimson);
+		}
+		50% {
+			filter: drop-shadow(0px 0px 0.5em crimson);
+		}
+		100% {
+			filter: drop-shadow(0px 0px 0.1px crimson);
+		}
+	}
+</style>

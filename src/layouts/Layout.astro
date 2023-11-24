@@ -1,6 +1,5 @@
 ---
-import Header from "../components/Nicov.astro";
-import Switch from "../components/Switch.astro";
+import { ViewTransitions } from "astro:transitions";
 import WaterBrand from "../components/WaterBrand.astro";
 interface Props {
 	title: string;
@@ -14,60 +13,61 @@ const { title } = Astro.props;
 	<head>
 		<!-- Meta tags -->
 		<meta charset="UTF-8" />
-		<meta name="description" content="Nikov AOE Professional Player" />
+		<meta name="description" content="Nicov AOE Professional Player" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/logo-oficial.png" />
 		<meta name="generator" content={Astro.generator} />
+		<ViewTransitions />
 
 		<!-- External scripts -->
 
 		<!-- Setting the title dynamically from TypeScript/JavaScript file -->
 		<title>{title}</title>
 	</head>
-	<body class="h-auto relative">
+	<body class="">
 		<main>
-			<!-- Rendering components -->
-			<Switch />
 			<slot />
+			<WaterBrand />
 		</main>
-		<WaterBrand />
+		<style is:global>
+			/* view transition Api */
+			::view-transition-new(root),
+			::view-transition-old(root) {
+				animation-duration: 0.3s;
+			}
+
+			/* view transition Api */
+			:root {
+				--accent: 136, 58, 234;
+				--accent-light: 224, 204, 250;
+				--accent-dark: 49, 10, 101;
+				--accent-gradient: linear-gradient(
+					141deg,
+					#202020 0%,
+					white 50%,
+					indigo 100%
+				);
+			}
+
+			html {
+				font-family: system-ui, sans-serif;
+				background: #13151a;
+				color-scheme: dark light;
+				position: relative;
+			}
+
+			section:before {
+				z-index: -1;
+				content: "";
+				position: absolute;
+				background-image: url(../img/war1.jpg);
+				view-transition-name: fade;
+				background-size: cover;
+				background-position: bottom;
+				height: 100%;
+				width: 100%;
+				opacity: 0.2;
+			}
+		</style>
 	</body>
 </html>
-
-<style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			141deg,
-			#202020 0%,
-			white 50%,
-			indigo 100%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		color-scheme: dark light;
-	}
-
-	section {
-		position: relative;
-		padding: 0;
-		margin: 0;
-		box-sizing: border-box;
-	}
-	section:before {
-		z-index: -1;
-		content: "";
-		position: absolute;
-		background-image: url(../img/warrior.png);
-		background-size: cover;
-		background-position: bottom;
-		background-repeat: no-repeat;
-		opacity: 0.2;
-		height: 100%;
-		width: 100%;
-	}
-</style>
