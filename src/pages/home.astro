@@ -6,10 +6,9 @@ import Layout from "../layouts/Layout.astro";
 import nicov from "../img/nicov-title.png";
 import { Youtube } from "../components/Youtube.jsx";
 import Switch from "../components/Switch.astro";
-import twitch from "../icons/twitch.svg";
 ---
 
-<Layout title="Inicio">
+<Layout title="Home">
 	<section class="h-screen p-0 m-0 w-screen flex items-center justify-center">
 		<a href="/">
 			<Image src={nicov} alt="nicov" class="nicov" />
@@ -21,24 +20,27 @@ import twitch from "../icons/twitch.svg";
 			<li class="col-span-3 row-span-1 rounded-lg">
 				<Card
 					href="about"
-					titleEng="About"
-					titleEsp="Sobre"
-					bodyEng="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumaut fugit cumque repudiandae voluptatibus sint repellat quisas asddsd asdsadsaa asdsadsas adsad"
-					bodyEsp="Nicov first started playing Age of Empires II in 2001 or 2002, mostly playing Death Match and Custom Scenario. After taking a break from the game in 2006, he returned in 2011 when he started playing the Random Map game mode.[1] In 2014, Nicov joined the Argentinian clan Dreamers (zZ).Nicov's first tournament success came in 2014 when he took a shared fifth place in Veterans of the Clash.[2] That same year, Nicov was part of the Argentinian team that placed third in SY Nations Cup I, together with Fedex, Gary, PaTiN, JuanNNN and Mago.[3]Further success came in 2015 when he won Poisn's Nomadness 1 together with Mentalist.[4] In 2017, he won the Escape Gaming Masters 2 after beating DauT in the grand finals.[5] Nicov has won all three editions of the Argeking Cup: in 2017 and 2019 he won against Twigg in the finals, while in 2018 he beat Fedex.[6]For Battle of Africa (2018), Nicov joined Aftermath. With his new clan, they claimed second place in this tournament after losing to TyRanT (later known as Team Secret) in the grand finals.[7] Aftermath also finished runner-up to Team Secret in the Escape Champions League (2018-19). [8] Nicov was one of the champions in single tournaments inside the ECL, winning against TheMax the final of the Escape Champions League, West Europe, 1v1. Together with MbL and Hera, Nicov won the Two Pools Tournament (2019).[9] In Battle of Africa 2 (2020), Nicov and his teammates defeated Team Secret in the finals.During King of the Desert 3, he made the decision to leave Aftermath as a member, but he still took part in showmatches with his former teammates. Less than a year later, he rejoined.In 2022 he won the 3v3 tournaments Return of the Clans and Battle of Africa 3 with Aftermath, defeating GamerLegion in both finals. He also became the first JorDan's Medieval Brawl champion, successively beating Yo, Vinchester and Villese, with each series decided on the last map."
+					titleEng="About me"
+					titleEsp="Sobre mí"
+					bodyEng="Hello, my name is Nicolás and I'm 31 years old. I was born in Argentina, and I currently live in Rome, Italy. I play AoE 2 Definitive Edition competitively. I have been playing Age of Empires II since I was 10, dating back to the zone days. I've been playing at a high level since 2013."
+					bodyEsp="Hola, mi nombre es Nicolás y tengo 31 años. Nací en Argentina y actualmente vivo en Roma, Italia. Juego AoE 2 Definitive Edition de manera competitiva. He estado jugando Age of Empires II desde los 10 años, remontándome a la época de la zona de juegos en línea. He estado jugando a un nivel alto desde 2013."
 				/>
 			</li>
+			<!-- Youtube -->
 			<li class="col-span-1 row-span-1 rounded-lg">
 				<Card
-					href={"/"}
-					titleEng="Twitch"
-					titleEsp="Twitch"
-					bodyEng="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumaut fugit cumque repudiandae voluptatibus sint repellat quisas asddsd asdsadsaa asdsadsas adsad"
-					bodyEsp="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumaut fugit cumque repudiandae voluptatibus sint repellat quisas asddsd asdsadsaa asdsadsas adsad"
+					href={"https://www.youtube.com/@NicovAoE"}
+					titleEng="YouTube"
+					titleEsp="YouTube"
+					bodyEng="Welcome to my YouTube channel. Subscribe!"
+					bodyEsp="Bienvenido a mi canal de YouTube. ¡Suscríbete!"
 				/>
 			</li>
+			<!-- redbull wallpaper -->
 			<li class="col-span-2 row-span-4 rounded-lg">
 				<Image
-					class={"w-full h-full object-cover border-dotted border-2 border-gray-700 rounded-lg "}
+					transition:persist
+					class="redbull w-full h-full object-cover border-dotted border-2 border-gray-700 rounded-lg"
 					src={wallpaper}
 					alt="wallpaper-redbull-nicov"
 				/>
@@ -53,41 +55,49 @@ import twitch from "../icons/twitch.svg";
 					bodyEsp="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumaut fugit cumque repudiandae voluptatibus sint repellat quisas asddsd asdsadsaa asdsadsas adsad"
 				/>
 			</li>
+			<!-- Twitter -->
 			<li class="col-span-1 row-span-1 rounded-lg">
 				<Card
-					href={"/"}
-					titleEng="Twitch"
-					titleEsp="Twitch"
-					bodyEng="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumaut fugit cumque repudiandae voluptatibus sint repellat quisas asddsd asdsadsaa asdsadsas adsad"
-					bodyEsp="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumaut fugit cumque repudiandae voluptatibus sint repellat quisas asddsd asdsadsaa asdsadsas adsad"
+					href={"https://twitter.com/nicovaoe"}
+					titleEng="Twitter"
+					titleEsp="Twitter"
+					bodyEng="I await you on my Twitter for updates and discussions!"
+					bodyEsp="Te espero en mí Twitter para actualizaciones y discusiones!"
 				/>
 			</li>
+			<!-- Twitch -->
 			<li class="twitch social col-span-1 row-span-1 rounded-lg">
 				<Card
 					titleEng="Twitch"
 					titleEsp="Twitch"
 					href="https://www.twitch.tv/nicov_"
-					bodyEsp="Ve a Nicov en Twitch"
-					bodyEng="Watch Nicov on Twitch"
+					bodyEsp="Únete a mi canal de Twitch y mira mis directos, ¡sígueme!"
+					bodyEng="Join my Twitch channel and watch my live streams, follow me!"
 				/>
 			</li>
 
 			<li class="video col-span-3 row-span-2 rounded-lg">
 				<!-- <TwitchPlayer client:visible /> -->
 				<!-- <Youtube client:visible transition:persist /> -->
-
-				<li class="discord social col-span-1 row-span-1 rounded-lg">
-					<a href="/#"> </a>
-				</li>
-				<li class="col-span-3 row-span-1 rounded-lg">
-					<Card
-						href={"/"}
-						titleEng="Twitch"
-						titleEsp="Twitch"
-						bodyEng="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumaut fugit cumque repudiandae voluptatibus sint repellat quisas asddsd asdsadsaa asdsadsas adsad"
-						bodyEsp="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumaut fugit cumque repudiandae voluptatibus sint repellat quisas asddsd asdsadsaa asdsadsas adsad"
-					/>
-				</li>
+			</li>
+			<!-- Discord -->
+			<li class="discord social col-span-1 row-span-1 rounded-lg">
+				<Card
+					titleEng="Discord"
+					titleEsp="Discord"
+					href="https://discord.gg/ageofempires"
+					bodyEsp=" ¡Te invito a unirte a la comunidad de Age of Empires en Discord!"
+					bodyEng="I invite you to join the Age of Empires community on Discord!"
+				/>
+			</li>
+			<li class="col-span-3 row-span-1 rounded-lg">
+				<Card
+					href={"/"}
+					titleEng="AOE Coaching "
+					titleEsp="Clases de AOE"
+					bodyEng="Looking for more students! Contact me by discord or twitch PM if interested, and click on the above banner for more info."
+					bodyEsp="¡Buscando más estudiantes! Contáctame por Discord o mensaje privado en Twitch si estás interesado, y haz clic en el banner de arriba para obtener más información."
+				/>
 			</li>
 		</ul>
 	</section>
@@ -111,6 +121,9 @@ import twitch from "../icons/twitch.svg";
 			grid-column: 1 / 2;
 			grid-row: auto;
 		}
+	}
+	.redbull {
+		view-transition-name: redbull;
 	}
 
 	.nicov {

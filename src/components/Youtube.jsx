@@ -1,4 +1,6 @@
 export function Youtube() {
+	/* add an amazing animation to the social icons and put inside const*/
+
 	return (
 		<article class="youtube relative flex flex-col items-center h-full w-full">
 			<span class="absolute text-sm font-medium text-yellow-500">

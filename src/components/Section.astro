@@ -1,69 +1,71 @@
 ---
-import Button from "./Button.jsx";
-import {Image} from  "astro:assets"
-import nicov from "../img/nicov-title.png"
+import { Image } from "astro:assets";
+import nicov from "../img/nicov-title.png";
+import { Youtube } from "./Youtube";
+import wallpaper from "../img/nikov-redbull.jpg";
+import Back from "./Back.astro";
 
-const {title, body} = Astro.props;
+const { title, body } = Astro.props;
 ---
 
-<section class="flex items-center justify-center ">
-		<a href= "/">
-			<Image src={nicov} alt="nicov" class="nicov"	/>
-		</a>
+<section class="flex items-center justify-center">
+	<a href="/">
+		<Image src={nicov} alt="nicov" class="nicov" />
+	</a>
 	<article
-		class="article-info grid grid-cols-6 grid-rows-5 gap-5 h-[80%] w-[1000px]">
-		<div class="col-span-6 row-span-3 flex items-center justify-center">
+		class="grid grid-cols-6 grid-rows-5 gap-3 max-h-[80vh] max-w-[1000px] z-20">
+		<div class="col-span-4 row-span-5 flex items-center justify-center">
 			<p class="text-2xl text-center text-slate-100">
 				{body}
 			</p>
 		</div>
-		<div class="video-space col-span-3 row-span-2 bg-yellow-200"></div>
+		<div class="col-span-2 row-span-4 rounded-lg">
+			<Image
+				transition:persist
+				class="redbull w-full h-full object-cover border-dotted border-2 border-gray-700 rounded-lg"
+				src={wallpaper}
+				alt="wallpaper-redbull-nicov"
+			/>
+		</div>
 		<div
-			class="col-span-3 row-span-2 flex items-center justify-center relative">
-			<h2 class="text-5xl text-center text-slate-100">
-				About {title}
-				<!-- <Button client:visible /> -->
-			</h2>
-			<div
-				class="flex items-center justify-center absolute bottom-0 right-0">
+			class="relative col-span-1 row-span-1 flex items-center justify-center">
+			<div class="w-full h-full rotate-180">
+				<Back />
 			</div>
 		</div>
+		<div class="col-span-1 row-span-1 flex items-center justify-center">
+		</div>
 	</article>
-</section>
 
-<style>
-	section {
-		height: 100vh;
-		width: 100vw;
-	}
-	@media (width <1000px) {
+	<style>
 		section {
 			height: 100vh;
 			width: 100vw;
 		}
-	}
+		article > div {
+			background-color: #23262d;
+			background-size: 400%;
+			border-radius: 7px;
+			background-position: 100%;
+			transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+			box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+		}
+		.redbull {
+			view-transition-name: redbull;
+		}
+		.nicov {
+			width: 275px;
+			position: absolute;
+			z-index: 1;
+			top: 0;
+			right: 0;
+			transition: all 0.5s ease-in-out;
+			view-transition-name: nicov;
+			filter: drop-shadow(0 0 0.05em crimson) brightness(1.2);
+		}
 
-	.article-info > div {
-		padding: 1px;
-		background-color: #23262d;
-		background-size: 400%;
-		border-radius: 7px;
-		background-position: 100%;
-		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-	}
-	.nicov {
-		width: 275px;
-		position: absolute;
-		z-index: 1;
-		top: 0;
-		right: 0;
-		transition: all .5s ease-in-out;
-		view-transition-name: nicov;		
-		filter: drop-shadow(0 0 .05em crimson) brightness(1.2);
-	}
-
-	.nicov:hover {
-		filter: drop-shadow(0 0 .3em crimson) brightness(1.5);
-	}
-</style>
+		.nicov:hover {
+			filter: drop-shadow(0 0 0.3em crimson) brightness(1.5);
+		}
+	</style>
+</section>
