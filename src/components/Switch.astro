@@ -3,20 +3,25 @@ import { Image } from "astro:assets";
 import aoe from "../img/AOE.png";
 ---
 
-<div class="checkbox-wrapper-10">
+<article class="checkbox-wrapper-10 relative">
+	<Image class="aoe" src={aoe} alt="aoe-logo" />
+
 	<input checked="" type="checkbox" id="cb5" class="tgl tgl-flip" />
 	<label for="cb5" data-tg-on="Eng" data-tg-off="Esp" class="tgl-btn">
 	</label>
-
-	<Image class="aoe" src={aoe} alt="aoe" />
-</div>
+</article>
 
 <style>
 	.checkbox-wrapper-10 {
-		position: fixed;
-		right: 6rem;
-		bottom: 1rem;
-		z-index: 10;
+		position: absolute;
+		right: 2rem;
+		bottom: 2rem;
+		width: 200px;
+		height: 200px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 	}
 	.checkbox-wrapper-10 .tgl {
 		display: none;
@@ -140,12 +145,7 @@ import aoe from "../img/AOE.png";
 	}
 
 	.aoe {
-		max-width: 200px;
 		opacity: 0.3;
-		position: fixed;
-		z-index: 1;
-		bottom: 3rem;
-		right: 2.5rem;
 		filter: drop-shadow(0 0 0.1em crimson);
 		z-index: -10;
 		view-transition-name: aoe;

@@ -13,18 +13,18 @@ import Switch from "../components/Switch.astro";
 		<a href="/">
 			<Image src={nicov} alt="nicov" class="nicov" />
 		</a>
-		<Switch />
 
 		<ul
 			class="grid grid-cols-6 grid-rows-5 gap-3 max-h-[80vh] max-w-[1000px] z-20">
-			<li class="col-span-3 row-span-1 rounded-lg">
-				<Card
-					href="about"
-					titleEng="About me"
-					titleEsp="Sobre mí"
-					bodyEng="Hello, my name is Nicolás and I'm 31 years old. I was born in Argentina, and I currently live in Rome, Italy. I play AoE 2 Definitive Edition competitively. I have been playing Age of Empires II since I was 10, dating back to the zone days. I've been playing at a high level since 2013."
-					bodyEsp="Hola, mi nombre es Nicolás y tengo 31 años. Nací en Argentina y actualmente vivo en Roma, Italia. Juego AoE 2 Definitive Edition de manera competitiva. He estado jugando Age of Empires II desde los 10 años, remontándome a la época de la zona de juegos en línea. He estado jugando a un nivel alto desde 2013."
-				/>
+			<li class="col-span-3 row-span-2 rounded-lg relative">
+				<a
+					href="/about"
+					class="about-conteiner absolute top-0 left-0 w-full h-full z-10">
+					<h1 class="about">
+						Sobre mi
+						<span>&rarr;</span>
+					</h1>
+				</a>
 			</li>
 			<!-- Youtube -->
 			<li class="col-span-1 row-span-1 rounded-lg">
@@ -46,16 +46,6 @@ import Switch from "../components/Switch.astro";
 				/>
 			</li>
 
-			<li class="col-span-3 row-span-2 rounded-lg">
-				<Card
-					href={"/"}
-					titleEng="Twitch"
-					titleEsp="Twitch"
-					bodyEng="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumaut fugit cumque repudiandae voluptatibus sint repellat quisas asddsd asdsadsaa asdsadsas adsad"
-					bodyEsp="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumaut fugit cumque repudiandae voluptatibus sint repellat quisas asddsd asdsadsaa asdsadsas adsad"
-				/>
-			</li>
-			<!-- Twitter -->
 			<li class="col-span-1 row-span-1 rounded-lg">
 				<Card
 					href={"https://twitter.com/nicovaoe"}
@@ -63,6 +53,16 @@ import Switch from "../components/Switch.astro";
 					titleEsp="Twitter"
 					bodyEng="I await you on my Twitter for updates and discussions!"
 					bodyEsp="Te espero en mí Twitter para actualizaciones y discusiones!"
+				/>
+			</li>
+			<!-- Twitter -->
+			<li class="col-span-3 row-span-1 rounded-lg">
+				<Card
+					href={"https://www.instagram.com/nicov_aoe/"}
+					titleEng="Instagram"
+					titleEsp=" ? ?? ? ? ?"
+					bodyEng="loremn sasasdsdsae!"
+					bodyEsp="lore sadjksad hdkshdkjsahdkj"
 				/>
 			</li>
 			<!-- Twitch -->
@@ -78,7 +78,7 @@ import Switch from "../components/Switch.astro";
 
 			<li class="video col-span-3 row-span-2 rounded-lg">
 				<!-- <TwitchPlayer client:visible /> -->
-				<!-- <Youtube client:visible transition:persist /> -->
+				<Youtube client:visible transition:persist />
 			</li>
 			<!-- Discord -->
 			<li class="discord social col-span-1 row-span-1 rounded-lg">
@@ -100,6 +100,7 @@ import Switch from "../components/Switch.astro";
 				/>
 			</li>
 		</ul>
+		<Switch transition:persist />
 	</section>
 </Layout>
 
@@ -122,6 +123,33 @@ import Switch from "../components/Switch.astro";
 			grid-row: auto;
 		}
 	}
+	.about-conteiner {
+		color: #d3d4d5;
+		height: 100%;
+		background-size: 400%;
+		border-radius: 8px;
+		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+		background-image: url("../img/about.jpeg");
+		background-position: bottom;
+		background-repeat: no-repeat;
+		background-size: cover;
+		transition: all 0.5s ease-in-out;
+	}
+	.about {
+		background-color: rgb(35 38 45 / 85%);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-weight: bold;
+		font-size: 1.25em;
+	}
+	.about-conteiner:hover {
+		background-position: center;
+		transform: scale(1.05);
+		transition: all 0.5s ease-in-out;
+	}
+
 	.redbull {
 		view-transition-name: redbull;
 	}

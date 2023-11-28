@@ -4,6 +4,11 @@ import nicov from "../img/nicov-title.png";
 import { Youtube } from "./Youtube";
 import wallpaper from "../img/nikov-redbull.jpg";
 import Back from "./Back.astro";
+import Switch from "./Switch.astro";
+import x from "../icons/x.svg";
+import instagram from "../icons/instagram.svg";
+import facebook from "../icons/facebook.svg";
+import email from "../icons/email.svg";
 
 const { title, body } = Astro.props;
 ---
@@ -12,12 +17,61 @@ const { title, body } = Astro.props;
 	<a href="/">
 		<Image src={nicov} alt="nicov" class="nicov" />
 	</a>
+
 	<article
-		class="grid grid-cols-6 grid-rows-5 gap-3 max-h-[80vh] max-w-[1000px] z-20">
-		<div class="col-span-4 row-span-5 flex items-center justify-center">
-			<p class="text-2xl text-center text-slate-100">
-				{body}
-			</p>
+		class="grid grid-cols-6 grid-rows-5 gap-3 max-h-[80vh] max-w-[1000px]">
+		<div class="col-span-4 row-span-1">
+			<h1
+				class="text-5xl text-center flex items-center justify-center h-full w-full tracking-widest uppercase font-semibold">
+				{"~"}{title}
+			</h1>
+		</div>
+		<div
+			class="relative col-span-1 row-span-1 flex items-center justify-center">
+			<div class="w-full h-full rotate-180">
+				<Back />
+			</div>
+		</div>
+		<div class="col-span-1 row-span-1 flex items-center justify-center">
+			<aside class="grid grid-cols-2 grid-rows-2 gap-3 w-2/3 h-2/3">
+				<a
+					href="https://twitter.com/nicovaoe"
+					target="_blank"
+					class="flex justify-center items-center">
+					<Image
+						src={x}
+						alt="x"
+						class="icon-media w-10 object-contain"
+					/>
+				</a>
+				<a
+					href="https://www.instagram.com/nicovaoe/"
+					target="_blank"
+					class="flex justify-center items-center">
+					<Image
+						src={instagram}
+						alt="x"
+						class="icon-media w-10 object-contain"
+					/>
+				</a>
+				<a
+					href="https://www.facebook.com/nicovaoe/"
+					target="_blank"
+					class="flex justify-center items-center">
+					<Image
+						src={facebook}
+						alt="x"
+						class="icon-media w-10 object-contain"
+					/>
+				</a>
+				<a href="#" class="flex justify-center items-center">
+					<Image
+						src={email}
+						alt="x"
+						class="icon-media w-10 object-contain"
+					/>
+				</a>
+			</aside>
 		</div>
 		<div class="col-span-2 row-span-4 rounded-lg">
 			<Image
@@ -27,45 +81,78 @@ const { title, body } = Astro.props;
 				alt="wallpaper-redbull-nicov"
 			/>
 		</div>
+
 		<div
-			class="relative col-span-1 row-span-1 flex items-center justify-center">
-			<div class="w-full h-full rotate-180">
-				<Back />
-			</div>
-		</div>
-		<div class="col-span-1 row-span-1 flex items-center justify-center">
+			class="col-span-4 row-span-4 flex items-start overflow-auto justify-center p-10 text-balance z-10">
+			<p class="text-lg text-start text-balance">
+				{body}
+			</p>
 		</div>
 	</article>
 
-	<style>
-		section {
-			height: 100vh;
-			width: 100vw;
-		}
-		article > div {
-			background-color: #23262d;
-			background-size: 400%;
-			border-radius: 7px;
-			background-position: 100%;
-			transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-			box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-		}
-		.redbull {
-			view-transition-name: redbull;
-		}
-		.nicov {
-			width: 275px;
-			position: absolute;
-			z-index: 1;
-			top: 0;
-			right: 0;
-			transition: all 0.5s ease-in-out;
-			view-transition-name: nicov;
-			filter: drop-shadow(0 0 0.05em crimson) brightness(1.2);
-		}
-
-		.nicov:hover {
-			filter: drop-shadow(0 0 0.3em crimson) brightness(1.5);
-		}
-	</style>
+	<Switch transition:persist />
 </section>
+
+<style>
+	section {
+		height: 100vh;
+		width: 100vw;
+		color: rgb(207 208 209);
+	}
+	article > div {
+		background-color: #23262d;
+		background-size: 400%;
+		border-radius: 7px;
+		background-position: 100%;
+		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+	}
+	.icon-media {
+		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+		background-color: rgba(255, 255, 255, 0.1);
+		padding: 0.3em;
+		border-radius: 8px;
+	}
+	.icon-media:hover {
+		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+	}
+	.redbull {
+		view-transition-name: redbull;
+	}
+	.nicov {
+		width: 275px;
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		right: 0;
+		transition: all 0.5s ease-in-out;
+		view-transition-name: nicov;
+		filter: drop-shadow(0 0 0.05em crimson) brightness(1.2);
+	}
+
+	.nicov:hover {
+		filter: drop-shadow(0 0 0.3em crimson) brightness(1.5);
+	}
+
+	article > div {
+		--sb-track-color: #303030;
+		--sb-thumb-color: #23262d;
+		--sb-size: 10px;
+
+		scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+	}
+
+	article > div::-webkit-scrollbar {
+		width: var(--sb-size);
+	}
+
+	article > div::-webkit-scrollbar-track {
+		background: var(--sb-track-color);
+		border-radius: 10px;
+	}
+
+	article > div::-webkit-scrollbar-thumb {
+		background: var(--sb-thumb-color);
+		border-radius: 10px;
+	}
+</style>
