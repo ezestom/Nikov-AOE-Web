@@ -31,51 +31,45 @@ import Switch from "../components/Switch.astro";
 				<Card
 					href={"https://www.youtube.com/@NicovAoE"}
 					target="_blank"
-					titleEng="YouTube"
 					titleEsp="YouTube"
-					bodyEng="Welcome to my YouTube channel. Subscribe!"
 					bodyEsp="Bienvenido a mi canal de YouTube. ¡Suscríbete!"
 				/>
 			</li>
 			<!-- redbull wallpaper -->
 			<li class="col-span-2 row-span-4 rounded-lg">
-				<Image
-					transition:persist
-					class="redbull w-full h-full object-cover border-dotted border-2 border-gray-700 rounded-lg"
-					src={wallpaper}
-					alt="wallpaper-redbull-nicov"
-				/>
+				<a href="/gallery">
+					<Image
+						transition:persist
+						class="redbull w-full h-full object-cover border-2 border-gray-700 rounded-lg"
+						src={wallpaper}
+						alt="wallpaper-redbull-nicov"
+					/>
+				</a>
 			</li>
 
 			<li class="col-span-1 row-span-1 rounded-lg">
 				<Card
 					href={"https://twitter.com/nicovaoe"}
 					target="_blank"
-					titleEng="Twitter"
 					titleEsp="Twitter"
-					bodyEng="I await you on my Twitter for updates and discussions!"
 					bodyEsp="Te espero en mí Twitter para actualizaciones y discusiones!"
 				/>
 			</li>
 			<!-- Twitter -->
 			<li class="col-span-3 row-span-1 rounded-lg">
 				<Card
-					href={"https://www.instagram.com/nicov_aoe/"}
-					
-					titleEng="Instagram"
-					titleEsp="Fechas de los próximos torneos" 
-					bodyEng="loremn sasasdsdsae!"
-					bodyEsp="En los siguientes torneos participaré como player, y estaré enfrentando a los mejores jugadores de esta época..."/>
+					href="/next"
+					titleEsp="Fechas de los próximos torneos"
+					bodyEsp="En los siguientes torneos participaré como player, y estaré enfrentando a los mejores jugadores de esta época..."
+				/>
 			</li>
 			<!-- Twitch -->
 			<li class="twitch social col-span-1 row-span-1 rounded-lg">
 				<Card
-					titleEng="Twitch"
 					titleEsp="Twitch"
 					href="https://www.twitch.tv/nicov_"
 					target="_blank"
 					bodyEsp="Únete a mi canal de Twitch y mira mis directos, ¡sígueme!"
-					bodyEng="Join my Twitch channel and watch my live streams, follow me!"
 				/>
 			</li>
 
@@ -86,20 +80,16 @@ import Switch from "../components/Switch.astro";
 			<!-- Discord -->
 			<li class="discord social col-span-1 row-span-1 rounded-lg">
 				<Card
-					titleEng="Discord"
 					titleEsp="Discord"
 					href="https://discord.com/channels/493887716451156018/588089583770665016"
 					target="_blank"
 					bodyEsp=" ¡Te invito a unirte a la comunidad de Age of Empires en Discord!"
-					bodyEng="I invite you to join the Age of Empires community on Discord!"
 				/>
 			</li>
 			<li class="col-span-3 row-span-1 rounded-lg">
 				<Card
 					href={"/classes"}
-					titleEng="AOE Coaching "
 					titleEsp="Clases de AOE"
-					bodyEng="Play like a Pro! Reach out to me on Discord, via Email, or drop a private message on Twitch if you're keen on learning to play Age of Empires like a pro. Let's start leveling up your game and having a blast together! "
 					bodyEsp="¡Domina el juego como un verdadero profesional! Contáctame por Discord, Email o envíame un mensaje privado en Twitch. ¡Empecemos juntos a mejorar tu juego y a disfrutar al máximo! "
 				/>
 			</li>
@@ -150,7 +140,7 @@ import Switch from "../components/Switch.astro";
 	}
 	.about-conteiner:hover {
 		background-position: center;
-		transform: scale(1.05);
+		transform: scale(1.03);
 		transition: all 0.5s ease-in-out;
 	}
 
@@ -159,7 +149,7 @@ import Switch from "../components/Switch.astro";
 	}
 
 	.nicov {
-		width: 275px;
+		width: 250px;
 		position: absolute;
 		z-index: 1;
 		top: 0;

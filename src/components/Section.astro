@@ -12,18 +12,13 @@ import email from "../icons/email.svg";
 
 interface Astro {
 	props: {
-		titleEng: string;
 		titleEsp: string;
-		bodyEng: string;
 		bodyEsp: string;
+		icon: string;
 	};
 }
 
-const { titleEng, titleEsp, bodyEng, bodyEsp } = Astro.props;
-
-const title = Astro.lang === "en" ? titleEng : titleEsp;
-const body = Astro.lang === "en" ? bodyEng : bodyEsp;
-
+const { titleEsp, bodyEsp, icon } = Astro.props;
 ---
 
 <section class="flex items-center justify-center">
@@ -32,11 +27,13 @@ const body = Astro.lang === "en" ? bodyEng : bodyEsp;
 	</a>
 
 	<article
-		class="grid grid-cols-6 grid-rows-5 gap-3 max-h-[80vh] max-w-[1000px]">
+		class="grid grid-cols-6 grid-rows-5 gap-3 max-h-[80vh] max-w-[1000px] z-20">
 		<div class="col-span-4 row-span-1">
 			<h1
-				class="text-5xl text-center flex items-center justify-center h-full w-full tracking-widest uppercase font-semibold">
-				{"~"}{title}
+				class="text-4xl text-center flex items-center justify-center h-full w-full tracking-widest uppercase font-semibold">
+				<span class="text-9xl text-gray-700 font-normal opacity-50"
+					>{icon}</span
+				>{titleEsp}
 			</h1>
 		</div>
 		<div
@@ -46,42 +43,40 @@ const body = Astro.lang === "en" ? bodyEng : bodyEsp;
 			</div>
 		</div>
 		<div class="col-span-1 row-span-1 flex items-center justify-center">
-			<aside class="grid grid-cols-2 grid-rows-2 gap-3 w-2/3 h-2/3">
+			<aside class="grid grid-cols-2 grid-rows-2 gap-2 w-2/3 h-2/3 p-1">
 				<a
 					href="https://twitter.com/nicovaoe"
 					target="_blank"
-					class="flex justify-center items-center">
-					<Image
-						src={x}
-						alt="x"
-						class="icon-media w-10 object-contain"
-					/>
+					class="icon-container flex justify-center items-center">
+					<Image src={x} alt="x" class="icon-media object-contain" />
 				</a>
 				<a
 					href="https://www.instagram.com/nicovaoe/"
 					target="_blank"
-					class="flex justify-center items-center">
+					class="icon-container flex justify-center items-center">
 					<Image
 						src={instagram}
 						alt="x"
-						class="icon-media w-10 object-contain"
+						class="icon-media object-contain"
 					/>
 				</a>
 				<a
 					href="https://www.facebook.com/nicovaoe/"
 					target="_blank"
-					class="flex justify-center items-center">
+					class="icon-container flex justify-center items-center">
 					<Image
 						src={facebook}
 						alt="x"
-						class="icon-media w-10 object-contain"
+						class="icon-media object-contain"
 					/>
 				</a>
-				<a href="#" class="flex justify-center items-center">
+				<a
+					href="#"
+					class="icon-container flex justify-center items-center">
 					<Image
 						src={email}
 						alt="x"
-						class="icon-media w-10 object-contain"
+						class="icon-media object-contain"
 					/>
 				</a>
 			</aside>
@@ -89,7 +84,7 @@ const body = Astro.lang === "en" ? bodyEng : bodyEsp;
 		<div class="col-span-2 row-span-4 rounded-lg">
 			<Image
 				transition:persist
-				class="redbull w-full h-full object-cover border-dotted border-2 border-gray-700 rounded-lg"
+				class="redbull w-full h-full object-cover b order-dotted border-2 border-gray-700 rounded-lg"
 				src={wallpaper}
 				alt="wallpaper-redbull-nicov"
 			/>
@@ -98,7 +93,7 @@ const body = Astro.lang === "en" ? bodyEng : bodyEsp;
 		<div
 			class="col-span-4 row-span-4 flex items-start overflow-auto justify-center p-10 text-balance z-10">
 			<p class="text-lg text-start text-balance">
-				{body}
+				{bodyEsp}
 			</p>
 		</div>
 	</article>
@@ -120,20 +115,23 @@ const body = Astro.lang === "en" ? bodyEng : bodyEsp;
 		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
 	}
-	.icon-media {
+	.icon-container {
 		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
 		background-color: rgba(255, 255, 255, 0.1);
-		padding: 0.3em;
+
 		border-radius: 8px;
 	}
-	.icon-media:hover {
+	.icon-media {
+	}
+
+	.icon-container:hover {
 		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3);
 	}
 	.redbull {
 		view-transition-name: redbull;
 	}
 	.nicov {
-		width: 275px;
+		width: 250px;
 		position: absolute;
 		z-index: 1;
 		top: 0;
