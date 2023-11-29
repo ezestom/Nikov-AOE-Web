@@ -2,8 +2,6 @@
 import logoAstro from "../../public/favicon.svg";
 import { Image } from "astro:assets";
 const title = "Create & Design by Eze in 2023 with Astro";
-const image = logoAstro;
-const props = { title, image };
 ---
 
 <a
@@ -15,7 +13,7 @@ const props = { title, image };
 	</p>
 
 	<a href="https://astro.build/" target="_blank">
-		<Image class="img" src={image} alt="Astro Logo" />
+		<Image class="img" src={logoAstro} alt="Astro Logo" />
 	</a>
 </a>
 
@@ -24,7 +22,7 @@ const props = { title, image };
 		position: absolute;
 		right: 0;
 		left: 0;
-		bottom: .5rem;
+		bottom: 0.5rem;
 		margin: auto;
 		border: 1px solid rgba(255, 255, 255, 0.1);
 		border-radius: 7px;
