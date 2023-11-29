@@ -7,8 +7,20 @@ export function Language() {
 	};
 
 	return (
-		<a onClick={handleClick} >
-			change language
-		</a>
+		<>
+			<a onClick={handleClick}>
+				<input
+					checked=""
+					type="checkbox"
+					id="cb5"
+					class="tgl tgl-flip"
+				/>
+				<label
+					for="cb5"
+					data-tg-on="Eng"
+					data-tg-off="Esp"
+					class="tgl-btn"></label>
+			</a>
+		</>
 	);
 }

@@ -5,8 +5,7 @@ interface Props {
 	bodyEng?: string;
 	bodyEsp?: string;
 	href?: string;
-	target?: string;
-	Image?: any;
+	target?: string | undefined;
 }
 
 const { href, titleEng, titleEsp, bodyEng, bodyEsp } = Astro.props;
@@ -16,7 +15,7 @@ const body = Astro.lang === "en" ? bodyEng : bodyEsp;
 ---
 
 <article class="link-card">
-	<a href={href}>
+	<a href={href} target={Astro.props.target}>
 		<h2>
 			{title}
 			<span>&rarr;</span>
@@ -44,27 +43,29 @@ const body = Astro.lang === "en" ? bodyEng : bodyEsp;
 		width: 100%;
 		text-decoration: none;
 		line-height: 1.2;
-		padding: 0.25rem;
 		border-radius: 8px;
 		color: white;
 		background-color: #23262d;
 		opacity: 0.8;
-		font-size: 1rem;
+		font-size: 0.95rem;
 	}
 
 	h2 {
 		background-color: rgba(255, 255, 255, 0.1);
 		border-radius: 6px 6px 0 0;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+		padding: 0.25rem;
 		font-weight: bold;
 		font-size: 1.25em;
 		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 	}
 	p {
-		margin-top: 0.25rem;
+		padding: 0.25rem;
 		text-wrap: balance;
+		display:grid;
+		align-items:start;
+		height:100%;
+		width:100%;
+		
 	}
 	.link-card:is(:hover, :focus-within) {
 		background-position: 0;
@@ -73,4 +74,5 @@ const body = Astro.lang === "en" ? bodyEng : bodyEsp;
 	.link-card:is(:hover, :focus-within) h2 {
 		color: rgb(var(--accent-light));
 	}
+
 </style>

@@ -10,7 +10,20 @@ import instagram from "../icons/instagram.svg";
 import facebook from "../icons/facebook.svg";
 import email from "../icons/email.svg";
 
-const { title, body } = Astro.props;
+interface Astro {
+	props: {
+		titleEng: string;
+		titleEsp: string;
+		bodyEng: string;
+		bodyEsp: string;
+	};
+}
+
+const { titleEng, titleEsp, bodyEng, bodyEsp } = Astro.props;
+
+const title = Astro.lang === "en" ? titleEng : titleEsp;
+const body = Astro.lang === "en" ? bodyEng : bodyEsp;
+
 ---
 
 <section class="flex items-center justify-center">
