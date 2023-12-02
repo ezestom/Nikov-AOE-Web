@@ -5,7 +5,7 @@ import { Youtube } from "./Youtube";
 import wallpaper from "../img/nikov-redbull.jpg";
 import Back from "./Back.astro";
 import Switch from "./Switch.astro";
-import x from "../icons/x.svg";
+import twitter from "../icons/twitter.svg";
 import instagram from "../icons/instagram.svg";
 import facebook from "../icons/facebook.svg";
 import email from "../icons/email.svg";
@@ -14,7 +14,7 @@ interface Astro {
 	props: {
 		titleEsp: string;
 		bodyEsp: string;
-		icon: string;
+		icon?: string;
 	};
 }
 
@@ -32,9 +32,9 @@ const { titleEsp, bodyEsp, icon } = Astro.props;
 			<h1
 				class="text-4xl text-center flex items-center justify-center h-full w-full tracking-widest uppercase font-semibold">
 				<span
-					class="text-9xl h-full text-gray-700 font-normal opacity-40"
-					>{icon}</span
-				>{titleEsp}
+					class="text-8xl h-full text-gray-700 font-normal opacity-40 grid content-center"
+					>{icon}
+				</span>{titleEsp}
 			</h1>
 		</div>
 		<div
@@ -49,14 +49,18 @@ const { titleEsp, bodyEsp, icon } = Astro.props;
 					href="https://twitter.com/nicovaoe"
 					target="_blank"
 					class="icon-container flex justify-center items-center">
-					<Image src={x} alt="x" class="icon-media object-contain" />
+					<Image
+						src={instagram}
+						alt="twitter"
+						class="icon-media object-contain"
+					/>
 				</a>
 				<a
 					href="https://www.instagram.com/nicovaoe/"
 					target="_blank"
 					class="icon-container flex justify-center items-center">
 					<Image
-						src={instagram}
+						src={facebook}
 						alt="x"
 						class="icon-media object-contain"
 					/>
