@@ -22,7 +22,7 @@ const { titleEsp, bodyEsp, icon } = Astro.props;
 ---
 
 <section class="flex items-center justify-center">
-	<a href="/">
+	<a href="/" class="nicov-container">
 		<Image src={nicov} alt="nicov" class="nicov" />
 	</a>
 
@@ -108,15 +108,16 @@ const { titleEsp, bodyEsp, icon } = Astro.props;
 
 <style>
 	@media (width < 950px) {
-		section {
-			height: 100%;
-		}
 		article {
 			grid-template-columns: 1fr;
 			grid-template-rows: auto;
-			padding: 0 1%;
-			height: 100%;
+			padding: 0 2%;
+			position: absolute;
+			top: 10rem;
+			overflow-y: scroll;
+			height: auto;
 		}
+
 		div:nth-child(2) {
 			grid-column: 1/2;
 			grid-row: 3/6;
@@ -128,6 +129,7 @@ const { titleEsp, bodyEsp, icon } = Astro.props;
 		div:nth-child(4) {
 			max-height: 400px;
 			width: auto;
+			padding: 0;
 		}
 		div:nth-child(5) {
 			height: 400px;

@@ -75,7 +75,7 @@ import Switch from "../components/Switch.astro";
 
 			<li class="video col-span-3 row-span-2 rounded-lg">
 				<!-- <YoutubePlayer/> -->
-				<Youtube client:visible transition:persist />
+				<!-- <Youtube client:visible transition:persist /> -->
 			</li>
 			<!-- Discord -->
 			<li class="discord social col-span-1 row-span-1 rounded-lg">
@@ -94,19 +94,19 @@ import Switch from "../components/Switch.astro";
 				/>
 			</li>
 		</ul>
-		<Switch transition:persist />
 	</section>
+	<Switch transition:persist />
 </Layout>
 
 <style>
 	@media (width < 950px) {
-
 		ul {
+			position: absolute;
+			top: 10rem;
 			grid-template-columns: repeat(2, 1fr);
 			grid-template-rows: repeat(6, 1fr);
-			padding: 0 1%;
-			margin:  5rem 0;
-			height: 100%;
+			padding: 0 2%;
+			overflow-y: scroll;
 		}
 		li {
 			height: 125px;
