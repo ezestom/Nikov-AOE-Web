@@ -1,14 +1,13 @@
 ---
 import { Image } from "astro:assets";
 import nicov from "../img/nicov-title.png";
-import { Youtube } from "./Youtube";
 import wallpaper from "../img/nikov-redbull.jpg";
 import Back from "./Back.astro";
 import Switch from "./Switch.astro";
-import twitter from "../icons/twitter.svg";
-import instagram from "../icons/instagram.svg";
-import facebook from "../icons/facebook.svg";
-import email from "../icons/email.svg";
+import twitter from "../icons/PajamasTwitter.png";
+import instagram from "../icons/instagram.png";
+import facebook from "../icons/IconoirFacebook.png";
+import email from "../icons/IconamoonEmailLight.png"
 
 interface Astro {
 	props: {
@@ -50,7 +49,7 @@ const { titleEsp, bodyEsp, icon } = Astro.props;
 					target="_blank"
 					class="icon-container flex justify-center items-center">
 					<Image
-						src={instagram}
+						src={twitter}
 						alt="twitter"
 						class="icon-media object-contain"
 					/>
@@ -60,7 +59,7 @@ const { titleEsp, bodyEsp, icon } = Astro.props;
 					target="_blank"
 					class="icon-container flex justify-center items-center">
 					<Image
-						src={facebook}
+						src={instagram}
 						alt="x"
 						class="icon-media object-contain"
 					/>
@@ -76,7 +75,8 @@ const { titleEsp, bodyEsp, icon } = Astro.props;
 					/>
 				</a>
 				<a
-					href="#"
+					href="mailto:ezequielstom@gmail.com"
+					target="_blank"
 					class="icon-container flex justify-center items-center">
 					<Image
 						src={email}

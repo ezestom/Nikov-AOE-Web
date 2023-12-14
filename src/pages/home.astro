@@ -21,7 +21,11 @@ import Switch from "../components/Switch.astro";
 					href="/aboutme"
 					class="about-conteiner absolute top-0 left-0 w-full h-full z-10">
 					<h1 class="about">
-						Sobre mi
+						<span
+							class="icon z-10 text-8xl font-normal absolute -left-3 -top-1"
+							>♗</span
+						>
+						 Sobre mi
 						<span>&rarr;</span>
 					</h1>
 				</a>
@@ -37,7 +41,11 @@ import Switch from "../components/Switch.astro";
 			</li>
 			<!-- redbull wallpaper -->
 			<li class="col-span-2 row-span-4 rounded-lg">
-				<a href="/gallery">
+				<a href="/gallery" class="relative">
+					<span
+						class="icon2 z-10 text-6xl font-normal absolute -left-1 -top-1 opacity-30"
+						>♟</span
+					>
 					<Image
 						transition:persist
 						class="redbull w-full h-full object-cover border-2 border-gray-700 rounded-lg"
@@ -56,7 +64,11 @@ import Switch from "../components/Switch.astro";
 				/>
 			</li>
 			<!-- Twitter -->
-			<li class="col-span-3 row-span-1 rounded-lg">
+			<li class="col-span-3 row-span-1 rounded-lg relative">
+				<span
+					class="icon4 z-10 text-4xl font-normal absolute left-0 -top-1 opacity-30"
+					>♘</span
+				>
 				<Card
 					href="/next"
 					titleEsp="Fechas de los próximos torneos"
@@ -86,7 +98,11 @@ import Switch from "../components/Switch.astro";
 					bodyEsp=" ¡Te invito a unirte a la comunidad de Age of Empires en Discord!"
 				/>
 			</li>
-			<li class="col-span-3 row-span-1 rounded-lg">
+			<li class="col-span-3 row-span-1 rounded-lg relative">
+				<span
+					class="icon3 z-10 text-4xl font-normal absolute left-0 -top-1 opacity-30"
+					>♖</span
+				>
 				<Card
 					href={"/classes"}
 					titleEsp="Clases de AOE"
@@ -100,6 +116,9 @@ import Switch from "../components/Switch.astro";
 
 <style>
 	@media (width < 950px) {
+		.icon2 {
+			display: none;
+		}
 		ul {
 			position: absolute;
 			top: 10rem;
@@ -153,6 +172,18 @@ import Switch from "../components/Switch.astro";
 		.redbull {
 			display: none;
 		}
+	}
+	.icon {
+		view-transition-name: king;
+	}
+	.icon2 {
+		view-transition-name: pawn;
+	}
+	.icon3 {
+		view-transition-name: rook;
+	}
+	.icon4 {
+		view-transition-name: horse;
 	}
 
 	.about-conteiner {

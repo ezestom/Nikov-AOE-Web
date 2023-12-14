@@ -4,10 +4,17 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Next">
+	<span class="icon z-10 text-7xl font-normal absolute top-1 left-0">♘</span>
 	<Section
 		icon="♘"
 		titleEsp="Próx. Torneos"
 		bodyEsp="• Torneo de las Edades Olvidadas - Fecha: 15 de marzo de 2023 - Descripción: Los imperios se enfrentarán en un torneo donde las estrategias más antiguas y olvidadas resurgirán. Desde tácticas clásicas hasta el uso ingenioso de reliquias, los jugadores explorarán las profundidades de la historia en este torneo único. • Conquista en el Desierto Dorado - Fecha: 28 de mayo de 2023 - Descripción: En el vasto desierto dorado, las civilizaciones competirán por el control de oasis estratégicos y rutas comerciales cruciales. La adaptabilidad y la gestión de recursos serán clave en esta batalla desértica. • Batalla de las Cinco Maravillas - Fecha: 10 de agosto de 2023 - Descripción: Las civilizaciones se enfrentarán en una competición para construir las maravillas más impresionantes. Además de la destreza militar, la planificación a largo plazo y la protección de constructores serán esenciales para asegurar la gloria y la victoria. • Invierno de Estrategias Heladas - Fecha: 22 de noviembre de 2023 - Descripción: En este torneo invernal, las tierras estarán cubiertas de nieve, lo que añadirá nuevos desafíos tácticos. Los jugadores deberán ajustar sus estrategias para lidiar con las condiciones climáticas, desde rutas comerciales congeladas hasta la escasez de alimentos. • Reinos en Ascenso - Fecha: 5 de febrero de 2024 - Descripción: Las civilizaciones competirán en un torneo donde la investigación tecnológica y la mejora constante serán cruciales. Desde avances en la edad hasta la adaptación de tecnologías únicas, los jugadores deberán elevar sus imperios a nuevas alturas para reclamar la victoria."
 	/>
-
 </Layout>
+<style>
+	.icon {
+		opacity: 0.3;
+		color: white;
+		view-transition-name: horse;
+	}
+</style>
