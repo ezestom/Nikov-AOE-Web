@@ -15,17 +15,17 @@ import Switch from "../components/Switch.astro";
 		</a>
 
 		<ul
-			class="grid grid-cols-6 grid-rows-5 gap-3 max-h-[80vh] max-w-[1000px] z-20">
+			class="grid grid-cols-6 grid-rows-5 gap-3 h-[90vh] max-w-[1100px] z-20">
 			<li class="col-span-3 row-span-2 rounded-lg relative">
 				<a
 					href="/aboutme"
 					class="about-conteiner absolute top-0 left-0 w-full h-full z-10">
+					<span
+						class="icon z-10 text-7xl font-normal absolute -left-2 top-1"
+						>♗</span
+					>
 					<h1 class="about">
-						<span
-							class="icon z-10 text-8xl font-normal absolute -left-3 -top-1"
-							>♗</span
-						>
-						 Sobre mi
+						Sobre mi
 						<span>&rarr;</span>
 					</h1>
 				</a>
@@ -43,12 +43,12 @@ import Switch from "../components/Switch.astro";
 			<li class="col-span-2 row-span-4 rounded-lg">
 				<a href="/gallery" class="relative">
 					<span
-						class="icon2 z-10 text-6xl font-normal absolute -left-1 -top-1 opacity-30"
+						class="icon2 z-10 text-5xl font-normal absolute -left-1 -top-1 opacity-30"
 						>♟</span
 					>
 					<Image
 						transition:persist
-						class="redbull w-full h-full object-cover border-2 border-gray-700 rounded-lg"
+						class="redbull w-full h-full object-cover rounded-lg"
 						src={wallpaper}
 						alt="wallpaper-redbull-nicov"
 					/>
@@ -60,7 +60,7 @@ import Switch from "../components/Switch.astro";
 					href={"https://twitter.com/nicovaoe"}
 					target="_blank"
 					titleEsp="Twitter"
-					bodyEsp="Te espero en mí Twitter para actualizaciones y discusiones!"
+					bodyEsp="Vente a Twitter para las actualizaciones y discusiones!"
 				/>
 			</li>
 			<!-- Twitter -->
@@ -194,10 +194,10 @@ import Switch from "../components/Switch.astro";
 		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
 		background-image: url("../img/about.jpeg");
-		background-position: bottom;
+		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
-		transition: all 0.5s ease-in-out;
+		transition: all 0.3s ease-in-out;
 	}
 	.about {
 		background-color: rgb(35 38 45 / 85%);
@@ -207,18 +207,19 @@ import Switch from "../components/Switch.astro";
 		font-weight: bold;
 		font-size: 1.25em;
 	}
-	.about-conteiner:hover {
+	.about-conteiner:hover,
+	.redbull:hover {
 		background-position: center;
-		transform: scale(1.03);
-		transition: all 0.5s ease-in-out;
+		transform: scale(1.02);
 	}
 
 	.redbull {
 		view-transition-name: redbull;
+		transition: all 0.3s ease-in-out;
 	}
 
 	.nicov {
-		width: 250px;
+		width: 200px;
 		position: absolute;
 		z-index: 1;
 		top: 0;

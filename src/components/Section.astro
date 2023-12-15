@@ -7,7 +7,7 @@ import Switch from "./Switch.astro";
 import twitter from "../icons/PajamasTwitter.png";
 import instagram from "../icons/instagram.png";
 import facebook from "../icons/IconoirFacebook.png";
-import email from "../icons/IconamoonEmailLight.png"
+import email from "../icons/IconamoonEmailLight.png";
 
 interface Astro {
 	props: {
@@ -26,7 +26,7 @@ const { titleEsp, bodyEsp, icon } = Astro.props;
 	</a>
 
 	<article
-		class="grid grid-cols-6 grid-rows-5 gap-3 max-h-[80vh] max-w-[1000px] z-20">
+		class="grid grid-cols-6 grid-rows-5 gap-3 h-[90vh] max-w-[1100px] z-20">
 		<div class="col-span-4 row-span-1">
 			<h1
 				class="text-4xl text-center flex items-center justify-center h-full w-full tracking-widest uppercase font-semibold">
@@ -96,8 +96,8 @@ const { titleEsp, bodyEsp, icon } = Astro.props;
 		</div>
 
 		<div
-			class="col-span-4 row-span-4 flex items-start overflow-auto justify-center p-10 text-balance z-10">
-			<p class="text-lg text-start text-balance">
+			class="col-span-4 row-span-4 flex items-start overflow-auto justify-center p-5 text-balance z-10">
+			<p class="text-xl text-start text-balance">
 				{bodyEsp}
 			</p>
 		</div>
@@ -107,6 +107,24 @@ const { titleEsp, bodyEsp, icon } = Astro.props;
 </section>
 
 <style>
+	p {
+		/* font-family: "Grenze Gotisch", serif;
+		font-size: 2rem; */
+		/* color: var(--tangerine); */
+
+		&::first-letter {
+			initial-letter: 3 2;
+			font-weight: 800;
+			padding-right: 1rem;
+			background: linear-gradient(
+				to right,
+				var(--razzmatazz),
+				var(--goldenyellow)
+			);
+			color: transparent;
+			-webkit-background-clip: text;
+		}
+	}
 	@media (width < 950px) {
 		article {
 			grid-template-columns: 1fr;
@@ -169,7 +187,7 @@ const { titleEsp, bodyEsp, icon } = Astro.props;
 		view-transition-name: redbull;
 	}
 	.nicov {
-		width: 250px;
+		width: 200px;
 		position: absolute;
 		z-index: 1;
 		top: 0;
