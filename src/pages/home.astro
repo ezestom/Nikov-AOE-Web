@@ -43,9 +43,10 @@ import Switch from "../components/Switch.astro";
 			<li class="col-span-2 row-span-4 rounded-lg">
 				<a href="/gallery" class="relative">
 					<span
-						class="icon2 z-10 text-5xl font-normal absolute -left-1 -top-1 opacity-30"
+						class="icon2 z-10 text-5xl font-normal absolute -left-1 top-0 opacity-30"
 						>♟</span
 					>
+
 					<Image
 						transition:persist
 						class="redbull w-full h-full object-cover rounded-lg"
@@ -105,7 +106,7 @@ import Switch from "../components/Switch.astro";
 				>
 				<Card
 					href={"/classes"}
-					titleEsp="Clases de AOE"
+					titleEsp="Clases de AOE 2"
 					bodyEsp="¡Domina el juego como un verdadero profesional! Contáctame por Discord, Email o envíame un mensaje privado en Twitch. ¡Empecemos juntos a mejorar tu juego y a disfrutar al máximo! "
 				/>
 			</li>
@@ -115,64 +116,6 @@ import Switch from "../components/Switch.astro";
 </Layout>
 
 <style>
-	@media (width < 950px) {
-		.icon2 {
-			display: none;
-		}
-		ul {
-			position: absolute;
-			top: 10rem;
-			grid-template-columns: repeat(2, 1fr);
-			grid-template-rows: repeat(6, 1fr);
-			padding: 0 2%;
-			overflow-y: scroll;
-		}
-		li {
-			height: 125px;
-		}
-		li:nth-child(1) {
-			grid-column: 1/3;
-			grid-row: 1/3;
-			height: 250px;
-		}
-		li:nth-child(2) {
-			grid-column: 1/2;
-			grid-row: 3/4;
-		}
-		li:nth-child(3) {
-			grid-column: 2/3;
-			grid-row: 3/7;
-		}
-		li:nth-child(4) {
-			grid-column: 1/2;
-			grid-row: 4/5;
-		}
-		li:nth-child(5) {
-			grid-column: 1/3;
-			grid-row: 5/6;
-		}
-		li:nth-child(6) {
-			grid-column: 2/3;
-			grid-row: 4/5;
-		}
-		li:nth-child(7) {
-			grid-column: 1/3;
-			grid-row: 6/7;
-			height: 250px;
-		}
-		li:nth-child(8) {
-			grid-column: 2/3;
-			grid-row: 3/4;
-		}
-		li:nth-child(9) {
-			grid-column: 1/3;
-			grid-row: 7/8;
-			margin-bottom: 1rem;
-		}
-		.redbull {
-			display: none;
-		}
-	}
 	.icon {
 		view-transition-name: king;
 	}
@@ -222,8 +165,8 @@ import Switch from "../components/Switch.astro";
 		width: 200px;
 		position: absolute;
 		z-index: 1;
-		top: 0;
-		right: 0;
+		top: .25rem;
+		right: .25rem;
 		transition: all 0.5s ease-in-out;
 		view-transition-name: nicov;
 		filter: drop-shadow(0 0 0.05em crimson) brightness(1.2);
@@ -264,6 +207,70 @@ import Switch from "../components/Switch.astro";
 		}
 		100% {
 			filter: drop-shadow(0px 0px 0.1px crimson);
+		}
+	}
+	@media (width < 950px) {
+		.icon,
+		.icon2,
+		.icon3,
+		.icon4 {
+			display: none;
+		}
+		.nicov {
+			width: 250px;
+		}
+		ul {
+			position: absolute;
+			top: 10rem;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(6, 1fr);
+			padding: 0 1%;
+			height: 100%;
+		}
+		li {
+			height: 125px;
+		}
+		li:nth-child(1) {
+			grid-column: 1/3;
+			grid-row: 1/3;
+			height: 250px;
+		}
+		li:nth-child(2) {
+			grid-column: 1/2;
+			grid-row: 3/4;
+		}
+		li:nth-child(3) {
+			grid-column: 2/3;
+			grid-row: 3/7;
+		}
+		li:nth-child(4) {
+			grid-column: 1/2;
+			grid-row: 4/5;
+		}
+		li:nth-child(5) {
+			grid-column: 1/3;
+			grid-row: 5/6;
+		}
+		li:nth-child(6) {
+			grid-column: 2/3;
+			grid-row: 4/5;
+		}
+		li:nth-child(7) {
+			grid-column: 1/3;
+			grid-row: 6/7;
+			height: 250px;
+		}
+		li:nth-child(8) {
+			grid-column: 2/3;
+			grid-row: 3/4;
+		}
+		li:nth-child(9) {
+			grid-column: 1/3;
+			grid-row: 7/8;
+			margin-bottom: 1rem;
+		}
+		.redbull {
+			display: none;
 		}
 	}
 </style>

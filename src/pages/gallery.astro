@@ -1,15 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Section from "../components/Section.astro";
+import GalleryComponent from "../components/GalleryComponent.jsx";
 ---
 
 <Layout title="Gallery">
 	<span class="icon z-10 text-7xl font-normal absolute top-1 left-0">♟</span>
-	<Section
-		titleEsp="Galeria de fotos"
-		icon="♟"
-		bodyEsp="Images gallery is comming soon!! I need to see more videos..."
-	/>
+
+	<Section titleEsp="Galeria de fotos" icon="♟" bodyEsp="" />
+
+	<GalleryComponent transition:persist client:visible />
 </Layout>
 
 <style>
@@ -17,5 +17,10 @@ import Section from "../components/Section.astro";
 		opacity: 0.3;
 		color: white;
 		view-transition-name: pawn;
+	}
+		@media (width < 950px) {
+		.icon {
+			display: none;
+		}
 	}
 </style>

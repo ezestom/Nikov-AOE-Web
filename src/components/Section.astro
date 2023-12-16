@@ -26,7 +26,7 @@ const { titleEsp, bodyEsp, icon } = Astro.props;
 	</a>
 
 	<article
-		class="grid grid-cols-6 grid-rows-5 gap-3 h-[90vh] max-w-[1100px] z-20">
+		class="grid grid-cols-6 grid-rows-5 gap-3 h-[90vh] w-[1100px] z-20">
 		<div class="col-span-4 row-span-1">
 			<h1
 				class="text-4xl text-center flex items-center justify-center h-full w-full tracking-widest uppercase font-semibold">
@@ -125,39 +125,7 @@ const { titleEsp, bodyEsp, icon } = Astro.props;
 			-webkit-background-clip: text;
 		}
 	}
-	@media (width < 950px) {
-		article {
-			grid-template-columns: 1fr;
-			grid-template-rows: auto;
-			padding: 0 2%;
-			position: absolute;
-			top: 10rem;
-			overflow-y: scroll;
-			height: auto;
-		}
 
-		div:nth-child(2) {
-			grid-column: 1/2;
-			grid-row: 3/6;
-		}
-		div:nth-child(3) {
-			grid-column: 1/2;
-			grid-row: 2/3;
-		}
-		div:nth-child(4) {
-			max-height: 400px;
-			width: auto;
-			padding: 0;
-		}
-		div:nth-child(5) {
-			height: 400px;
-			margin-bottom: 1rem;
-		}
-		div {
-			padding: 3%;
-			max-height: 450px;
-		}
-	}
 	section {
 		height: 100vh;
 		width: 100vw;
@@ -190,8 +158,8 @@ const { titleEsp, bodyEsp, icon } = Astro.props;
 		width: 200px;
 		position: absolute;
 		z-index: 1;
-		top: 0;
-		right: 0;
+		top: 0.25rem;
+		right: 0.25rem;
 		transition: all 0.5s ease-in-out;
 		view-transition-name: nicov;
 		filter: drop-shadow(0 0 0.05em crimson) brightness(1.2);
@@ -221,5 +189,42 @@ const { titleEsp, bodyEsp, icon } = Astro.props;
 	article > div::-webkit-scrollbar-thumb {
 		background: var(--sb-thumb-color);
 		border-radius: 10px;
+	}
+	@media (width < 950px) {
+		.nicov {
+			width: 250px;
+		}
+		article {
+			width: 100vw;
+			grid-template-columns: 1fr;
+			grid-template-rows: auto;
+			padding: 0 2%;
+			position: absolute;
+			top: 10rem;
+			overflow-y: scroll;
+			height: auto;
+		}
+
+		div:nth-child(2) {
+			grid-column: 1/2;
+			grid-row: 3/6;
+		}
+		div:nth-child(3) {
+			grid-column: 1/2;
+			grid-row: 2/3;
+		}
+		div:nth-child(4) {
+			max-height: 400px;
+			width: auto;
+			padding: 0;
+		}
+		div:nth-child(5) {
+			height: 400px;
+			margin-bottom: 1rem;
+		}
+		div {
+			padding: 3%;
+			max-height: 450px;
+		}
 	}
 </style>

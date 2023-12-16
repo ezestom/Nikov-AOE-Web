@@ -11,7 +11,7 @@ const text = "Powered by Astro";
 	target="_blank">
 	<p class="">
 		{title}
-		{<br/>}
+		{(<br />)}
 		{text}
 	</p>
 
@@ -21,6 +21,14 @@ const text = "Powered by Astro";
 </a>
 
 <style>
+	@media (width < 1150px) {
+		.water-brand {
+			display: none;
+		}
+		.img {
+			display: none;
+		}
+	}
 	.water-brand {
 		position: absolute;
 		left: 0.5rem;
