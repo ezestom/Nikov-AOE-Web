@@ -7,7 +7,7 @@ import twitter from "../icons/PajamasTwitter.png";
 import instagram from "../icons/instagram.png";
 import facebook from "../icons/IconoirFacebook.png";
 import email from "../icons/IconamoonEmailLight.png";
-import aoe from "../../src/img/aoe.png";
+import LogoAge from "./LogoAge.astro";
 
 interface Astro {
 	props: {
@@ -102,20 +102,10 @@ const { titleEsp, bodyEsp, icon } = Astro.props;
 			</p>
 		</div>
 	</article>
-	<Image src={aoe} class="aoe" alt="logo-aoe" />
+	<LogoAge />
 </section>
 
 <style>
-	.aoe {
-		position: absolute;
-		right: 0;
-		width: 200px;
-		bottom: 0;
-		opacity: 0.3;
-		filter: drop-shadow(0 0 0.1em crimson);
-		z-index: -10;
-		view-transition-name: aoe;
-	}
 	p {
 		/* font-family: "Grenze Gotisch", serif;
 		font-size: 2rem; */

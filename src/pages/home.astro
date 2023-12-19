@@ -5,8 +5,8 @@ import wallpaper from "../img/nikov-redbull.jpg";
 import Layout from "../layouts/Layout.astro";
 import nicov from "../img/nicov-title.png";
 import { Youtube } from "../components/Youtube.jsx";
-import aoe from "../../src/img/aoe.png";
 import { Switch } from "../components/Switch/Switch.jsx";
+import LogoAge from "../components/LogoAge.astro";
 ---
 
 <!-- componente home en ASTRO -->
@@ -114,22 +114,10 @@ import { Switch } from "../components/Switch/Switch.jsx";
 			</li>
 		</ul>
 	</section>
-
-	<Image src={aoe} class="aoe" alt="logo-aoe" />
+	<LogoAge/>
 </Layout>
 
 <style>
-	.aoe {
-		position: absolute;
-		right: 0;
-		width: 200px;
-		bottom: 0;
-		opacity: 0.3;
-		filter: drop-shadow(0 0 0.1em crimson);
-		z-index: -10;
-		view-transition-name: aoe;
-	}
-
 	.icon {
 		view-transition-name: king;
 	}
