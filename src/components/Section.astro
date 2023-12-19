@@ -3,11 +3,12 @@ import { Image } from "astro:assets";
 import nicov from "../img/nicov-title.png";
 import wallpaper from "../img/nikov-redbull.jpg";
 import Back from "./Back.astro";
-import Switch from "./Switch.astro";
 import twitter from "../icons/PajamasTwitter.png";
 import instagram from "../icons/instagram.png";
 import facebook from "../icons/IconoirFacebook.png";
 import email from "../icons/IconamoonEmailLight.png";
+import { Switch } from "./Switch/Switch";
+import AOE from "../img/aoe.png";
 
 interface Astro {
 	props: {
@@ -89,7 +90,7 @@ const { titleEsp, bodyEsp, icon } = Astro.props;
 		<div class="col-span-2 row-span-4 rounded-lg">
 			<Image
 				transition:persist
-				class="redbull w-full h-full object-cover b order-dotted border-2 border-gray-700 rounded-lg"
+				class="redbull w-full h-full object-cover rounded-lg"
 				src={wallpaper}
 				alt="wallpaper-redbull-nicov"
 			/>
@@ -102,11 +103,20 @@ const { titleEsp, bodyEsp, icon } = Astro.props;
 			</p>
 		</div>
 	</article>
-
-	<Switch transition:persist />
+	<Image class="aoe" src={AOE} alt="logo-aoe" />
 </section>
 
 <style>
+	.aoe {
+		position: absolute;
+		right: 0;
+		width: 200px;
+		bottom: 0;
+		opacity: 0.3;
+		filter: drop-shadow(0 0 0.1em crimson);
+		z-index: -10;
+		view-transition-name: aoe;
+	}
 	p {
 		/* font-family: "Grenze Gotisch", serif;
 		font-size: 2rem; */

@@ -4,9 +4,11 @@ interface Props {
 	bodyEsp?: string;
 	href?: string;
 	target?: string | undefined;
+	bodyEng?: string;
+	titleEng?: string;
 }
 
-const { href, titleEsp, bodyEsp } = Astro.props;
+const { href, titleEsp, bodyEsp, bodyEng, titleEng } = Astro.props;
 ---
 
 <article class="link-card">

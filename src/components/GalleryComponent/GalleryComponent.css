@@ -77,29 +77,6 @@
 	}
 }
 
-@layer reset {
-	*,
-	*:after,
-	*:before {
-		box-sizing: border-box;
-	}
-
-	* {
-		margin: 0;
-		padding: 0;
-	}
-
-	ul[class] {
-		list-style: none;
-	}
-
-	label {
-		cursor: pointer;
-		max-width: max-content;
-		user-select: none;
-	}
-}
-
 @media (width < 1250px) {
 	.gallery {
 		display: none;

@@ -5,9 +5,11 @@ import wallpaper from "../img/nikov-redbull.jpg";
 import Layout from "../layouts/Layout.astro";
 import nicov from "../img/nicov-title.png";
 import { Youtube } from "../components/Youtube.jsx";
-import Switch from "../components/Switch.astro";
+import AOE from "../img/AOE.png";
+import { Switch } from "../components/Switch/Switch.jsx";
 ---
 
+<!-- componente home en ASTRO -->
 <Layout title="Home">
 	<section class="h-screen p-0 m-0 w-screen flex items-center justify-center">
 		<a href="/">
@@ -87,7 +89,7 @@ import Switch from "../components/Switch.astro";
 			</li>
 
 			<li class="video col-span-3 row-span-2 rounded-lg">
-				<!-- <YoutubePlayer/> -->
+				<!-- <Player/> -->
 				<Youtube client:visible transition:persist />
 			</li>
 			<!-- Discord -->
@@ -112,10 +114,22 @@ import Switch from "../components/Switch.astro";
 			</li>
 		</ul>
 	</section>
-	<Switch transition:persist />
+
+	<Image class="aoe" src={AOE} alt="logo-aoe" />
 </Layout>
 
 <style>
+	.aoe {
+		position: absolute;
+		right: 0;
+		width: 200px;
+		bottom: 0;
+		opacity: 0.3;
+		filter: drop-shadow(0 0 0.1em crimson);
+		z-index: -10;
+		view-transition-name: aoe;
+	}
+
 	.icon {
 		view-transition-name: king;
 	}
@@ -165,8 +179,8 @@ import Switch from "../components/Switch.astro";
 		width: 200px;
 		position: absolute;
 		z-index: 1;
-		top: .25rem;
-		right: .25rem;
+		top: 0.25rem;
+		right: 0.25rem;
 		transition: all 0.5s ease-in-out;
 		view-transition-name: nicov;
 		filter: drop-shadow(0 0 0.05em crimson) brightness(1.2);
@@ -210,6 +224,11 @@ import Switch from "../components/Switch.astro";
 		}
 	}
 	@media (width < 950px) {
+		.aoe {
+			top: 0;
+			left: 0;
+			width: 125px;
+		}
 		.icon,
 		.icon2,
 		.icon3,
