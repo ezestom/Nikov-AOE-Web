@@ -1,3 +1,5 @@
+# Nikov-AOE-Web
+![image](https://github.com/ezestom/Nicov-AOE-Web/assets/100095709/5ccbea22-aa5c-40b0-8ceb-26c396e1aa06)
 # Astro Starter Kit: Basics
 
 ```sh
@@ -52,4 +54,4 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-# Nikov-AOE-Web
+
