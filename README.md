@@ -1,4 +1,5 @@
 # Nikov-AOE-Web
+## Create the project using React, Tailwind and Astro.
 ![image](https://github.com/ezestom/Nicov-AOE-Web/assets/100095709/5ccbea22-aa5c-40b0-8ceb-26c396e1aa06)
 # Astro Starter Kit: Basics
 
