@@ -8,6 +8,7 @@ import instagram from "../icons/instagram.png";
 import facebook from "../icons/IconoirFacebook.png";
 import email from "../icons/IconamoonEmailLight.png";
 import LogoAge from "./LogoAge.astro";
+import LogoNicov from "./LogoNicov.astro";
 
 interface Astro {
 	props: {
@@ -21,10 +22,7 @@ const { titleEsp, bodyEsp, icon } = Astro.props;
 ---
 
 <section class="flex items-center justify-center">
-	<a href="/" class="nicov-container">
-		<Image src={nicov} alt="nicov" class="nicov" />
-	</a>
-
+	<LogoNicov />
 	<article
 		class="grid grid-cols-6 grid-rows-5 gap-3 h-[90vh] w-[1100px] z-20">
 		<div class="col-span-4 row-span-1">
@@ -96,7 +94,7 @@ const { titleEsp, bodyEsp, icon } = Astro.props;
 		</div>
 
 		<div
-			class="col-span-4 row-span-4 flex items-start overflow-auto justify-center p-5 text-balance z-10">
+			class="col-span-4 row-span-4 flex items-start justify-start overflow-auto p-5 text-balance z-10 relative">
 			<p class="text-xl text-start text-balance">
 				{bodyEsp}
 			</p>
@@ -153,16 +151,6 @@ const { titleEsp, bodyEsp, icon } = Astro.props;
 	.redbull {
 		view-transition-name: redbull;
 	}
-	.nicov {
-		width: 200px;
-		position: absolute;
-		z-index: 1;
-		top: 0.25rem;
-		right: 0.25rem;
-		transition: all 0.5s ease-in-out;
-		view-transition-name: nicov;
-		filter: drop-shadow(0 0 0.05em crimson) brightness(1.2);
-	}
 
 	.nicov:hover {
 		filter: drop-shadow(0 0 0.3em crimson) brightness(1.5);
@@ -190,9 +178,6 @@ const { titleEsp, bodyEsp, icon } = Astro.props;
 		border-radius: 10px;
 	}
 	@media (width < 950px) {
-		.nicov {
-			width: 250px;
-		}
 		article {
 			width: 100vw;
 			grid-template-columns: 1fr;

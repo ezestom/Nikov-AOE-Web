@@ -7,15 +7,13 @@ import nicov from "../img/nicov-title.png";
 import { Youtube } from "../components/Youtube.jsx";
 import { Switch } from "../components/Switch/Switch.jsx";
 import LogoAge from "../components/LogoAge.astro";
+import LogoNicov from "../components/LogoNicov.astro";
 ---
 
 <!-- componente home en ASTRO -->
 <Layout title="Home">
 	<section class="h-screen p-0 m-0 w-screen flex items-center justify-center">
-		<a href="/">
-			<Image src={nicov} alt="nicov" class="nicov" />
-		</a>
-
+		<LogoNicov />
 		<ul
 			class="grid grid-cols-6 grid-rows-5 gap-3 h-[90vh] max-w-[1100px] z-20">
 			<li class="col-span-3 row-span-2 rounded-lg relative">
@@ -58,6 +56,7 @@ import LogoAge from "../components/LogoAge.astro";
 				</a>
 			</li>
 
+			<!-- Twitter -->
 			<li class="col-span-1 row-span-1 rounded-lg">
 				<Card
 					href={"https://twitter.com/nicovaoe"}
@@ -66,16 +65,26 @@ import LogoAge from "../components/LogoAge.astro";
 					bodyEsp="Vente a Twitter para las actualizaciones y discusiones!"
 				/>
 			</li>
-			<!-- Twitter -->
-			<li class="col-span-3 row-span-1 rounded-lg relative">
+
+			<!-- Próximos torneos -->
+
+			<li class="col-span-2 row-span-1 rounded-lg relative">
 				<span
 					class="icon4 z-10 text-4xl font-normal absolute left-0 -top-1 opacity-30"
 					>♘</span
 				>
 				<Card
 					href="/next"
-					titleEsp="Fechas de los próximos torneos"
+					titleEsp="Próximos torneos"
 					bodyEsp="En los siguientes torneos participaré como player, y estaré enfrentando a los mejores jugadores de esta época..."
+				/>
+			</li>
+			<!-- Contacto Form -->
+			<li class="col-span-1 row-span-1 rounded-lg relative">
+				<Card
+					href="/form"
+					titleEsp="Contacto"
+					bodyEsp="Escribime por el form, te responderé a la brevedad."
 				/>
 			</li>
 			<!-- Twitch -->
@@ -114,7 +123,7 @@ import LogoAge from "../components/LogoAge.astro";
 			</li>
 		</ul>
 	</section>
-	<LogoAge/>
+	<LogoAge />
 </Layout>
 
 <style>
@@ -163,20 +172,6 @@ import LogoAge from "../components/LogoAge.astro";
 		transition: all 0.3s ease-in-out;
 	}
 
-	.nicov {
-		width: 200px;
-		position: absolute;
-		z-index: 1;
-		top: 0.25rem;
-		right: 0.25rem;
-		transition: all 0.5s ease-in-out;
-		view-transition-name: nicov;
-		filter: drop-shadow(0 0 0.05em crimson) brightness(1.2);
-	}
-
-	.nicov:hover {
-		filter: drop-shadow(0 0 0.3em crimson) brightness(1.5);
-	}
 	li {
 		overflow: hidden;
 	}
@@ -223,9 +218,7 @@ import LogoAge from "../components/LogoAge.astro";
 		.icon4 {
 			display: none;
 		}
-		.nicov {
-			width: 250px;
-		}
+
 		ul {
 			position: absolute;
 			top: 10rem;
