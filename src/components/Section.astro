@@ -1,14 +1,14 @@
 ---
 import { Image } from "astro:assets";
-import nicov from "../img/nicov-title.png";
-import wallpaper from "../img/nikov-redbull.jpg";
+import aoe2 from "../img/aoe2.webp";
 import Back from "./Back.astro";
-import twitter from "../icons/PajamasTwitter.png";
-import instagram from "../icons/instagram.png";
-import facebook from "../icons/IconoirFacebook.png";
-import email from "../icons/IconamoonEmailLight.png";
+import twitter from "../icons/twitter.svg";
+import instagram from "../icons/instagram.svg";
+import twitch from "../icons/twitch.svg";
+import email from "../icons/email.svg";
 import LogoAge from "./LogoAge.astro";
 import LogoNicov from "./LogoSeba.astro";
+import logoSebaOficial from "../img/logoSebaOficial.jpg";
 
 interface Astro {
 	props: {
@@ -43,7 +43,7 @@ const { titleEsp, bodyEsp, icon } = Astro.props;
 		<div class="col-span-1 row-span-1 flex items-center justify-center">
 			<aside class="grid grid-cols-2 grid-rows-2 gap-2 w-2/3 h-2/3 p-1">
 				<a
-					href="https://twitter.com/nicovaoe"
+					href="https://twitter.com/Sebastian_AOE"
 					target="_blank"
 					class="icon-container flex justify-center items-center">
 					<Image
@@ -53,7 +53,7 @@ const { titleEsp, bodyEsp, icon } = Astro.props;
 					/>
 				</a>
 				<a
-					href="https://www.instagram.com/nicovaoe/"
+					href="https://www.instagram.com/sebastian_gastelumendi/"
 					target="_blank"
 					class="icon-container flex justify-center items-center">
 					<Image
@@ -63,17 +63,17 @@ const { titleEsp, bodyEsp, icon } = Astro.props;
 					/>
 				</a>
 				<a
-					href="https://www.facebook.com/nicovaoe/"
+					href="https://www.twitch.tv/sebastian2002/"
 					target="_blank"
 					class="icon-container flex justify-center items-center">
 					<Image
-						src={facebook}
+						src={twitch}
 						alt="x"
 						class="icon-media object-contain"
 					/>
 				</a>
 				<a
-					href="mailto:ezequielstom@gmail.com"
+					href="mailto:gastelumendisebastian@gmail.com"
 					target="_blank"
 					class="icon-container flex justify-center items-center">
 					<Image
@@ -88,8 +88,8 @@ const { titleEsp, bodyEsp, icon } = Astro.props;
 			<Image
 				transition:persist
 				class="redbull w-full h-full object-cover rounded-lg"
-				src={wallpaper}
-				alt="wallpaper-redbull-nicov"
+				src={aoe2}
+				alt="wallpaper-aoe-seba"
 			/>
 		</div>
 
@@ -100,10 +100,41 @@ const { titleEsp, bodyEsp, icon } = Astro.props;
 			</p>
 		</div>
 	</article>
+	<a
+		href="/"
+		class="absolute bottom-4 right-3 w-[150px] z-0 logoOficial hidden md:block transition">
+		<Image
+			src={logoSebaOficial}
+			alt="Sebastian 2002"
+			class="rounded-full"
+		/></a
+	>
 	<LogoAge />
 </section>
 
 <style>
+	.logoOficial {
+		transition: all 0.3s ease-in-out;
+		animation: pulse 8s infinite ease;
+		opacity: 0.85;
+	}
+	@keyframes pulse {
+		0% {
+			filter: drop-shadow(0px 0px 0.15em #45d3e0);
+		}
+		25% {
+			filter: drop-shadow(0px 0px 0.5em #45d3e0);
+		}
+		50% {
+			filter: drop-shadow(0px 0px 1em #45d3e0);
+		}
+		75% {
+			filter: drop-shadow(0px 0px 0.5em #45d3e0);
+		}
+		100% {
+			filter: drop-shadow(0px 0px 0.15em #45d3e0);
+		}
+	}
 	p {
 		/* font-family: "Grenze Gotisch", serif;
 		font-size: 2rem; */

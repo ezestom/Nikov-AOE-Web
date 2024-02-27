@@ -10,7 +10,6 @@ const images = [
 	"https://i.ytimg.com/vi/3AVBhB3lga4/maxresdefault.jpg",
 	"https://www.aoezone.net/data/groups/Photos/o/10/21357/84d05c113d352bb688df1d45152a5dae.jpg",
 	"https://www.aoezone.net/data/groups/Photos/o/10/21357/292dd3437037bbc1403694e1d7990a36.jpg",
-
 	"https://i.ytimg.com/vi/qwxW8ds9qgY/maxresdefault.jpg",
 ];
 
