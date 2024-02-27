@@ -1,30 +1,30 @@
 ---
 import { Image } from "astro:assets";
-import nicov from "../img/nicov-title.png";
+import seba from "../img/sebastian2002-title.png";
 ---
 
 <a href="/">
-	<Image src={nicov} alt="nicov" class="nicov" />
+	<Image src={seba} alt="seba" class="seba" />
 </a>
 
 <style>
-	.nicov {
+	.seba {
 		width: 200px;
 		position: absolute;
 		z-index: 1;
-		top: 0.25rem;
-		right: 0.25rem;
+		top: .5rem;
+		right: 0.5rem;
 		transition: all 0.5s ease-in-out;
-		view-transition-name: nicov;
+		view-transition-name: seba;
 		filter: drop-shadow(0 0 0.05em crimson) brightness(1.2);
 	}
 
-	.nicov:hover {
+	.seba:hover {
 		filter: drop-shadow(0 0 0.3em crimson) brightness(1.5);
 	}
 
 	@media (width < 950px) {
-		.nicov {
+		.seba {
 			width: 250px;
 		}
 	}

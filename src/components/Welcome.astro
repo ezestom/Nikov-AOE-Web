@@ -1,17 +1,17 @@
 ---
 import { Image } from "astro:assets";
 import warrior from "../img/warrior5.jpg";
-import nicov from "../img/nicov-title.png";
+import seba from "../img/sebastian2002-title.png";
 import aoe from "../img/AOE.png";
 ---
 
 <section class="max-h-screen max-w-screen relative">
 	<article class="header-article">
 		<a href="/home">
-			<Image class="nicov" src={nicov} alt="nicov" />
+			<Image class="seba" src={seba} alt="seba-logo" />
 			<code class="text-xs absolute bottom-0 left-0
 			  text-slate-400"
-				>Click on Nicov to go home <span>&rarr;</span>
+				>Click on Sebastian to go home <span>&rarr;</span>
 			</code>
 		</a>
 		<Image class="warrior" src={warrior} alt="warrior" />
@@ -43,18 +43,18 @@ import aoe from "../img/AOE.png";
 			linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
 		mask: radial-gradient(circle at center, white 15%, transparent 65%);
 	}
-	.nicov {
+	.seba {
 		max-width: 500px;
 		position: absolute;
 		z-index: 1;
 		top: 1rem;
 		left: 1rem;
 		transition: all 0.5s ease-in-out;
-		view-transition-name: nicov;
+		view-transition-name: seba;
 		filter: drop-shadow(0 0 0.05em crimson) brightness(1.3);
 	}
 
-	.nicov:hover {
+	.seba:hover {
 		filter: drop-shadow(0 0 0.5em crimson) brightness(1.5);
 	}
 
@@ -87,7 +87,7 @@ import aoe from "../img/AOE.png";
 			margin: auto;
 		}
 
-		.nicov {
+		.seba {
 			top: 0;
 			left: 0;
 			right: 0;
