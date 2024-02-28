@@ -123,7 +123,7 @@ import logoSebaOficial from "../img/logoSebaOficial.jpg";
 		</ul>
 		<a
 			href="/"
-			class="absolute bottom-4 right-3 w-[150px] z-0 logoOficial hidden md:block transition">
+			class="absolute bottom-7 right-2 w-[150px] z-0 logoOficial hidden md:block transition-all">
 			<Image
 				src={logoSebaOficial}
 				alt="Sebastian 2002"
@@ -135,11 +135,11 @@ import logoSebaOficial from "../img/logoSebaOficial.jpg";
 
 	<style>
 		.logoOficial {
-			animation: pulse 8s infinite ease;
+			animation: pulse 5s infinite ease;
 			opacity: 0.85;
 		}
 		.logoOficial:hover {
-			transform: scale(1.03);
+			transform: scale(1.03) rotate(3deg);
 		}
 		.icon {
 			view-transition-name: king;
@@ -212,19 +212,19 @@ import logoSebaOficial from "../img/logoSebaOficial.jpg";
 		}
 		@keyframes pulse {
 			0% {
-				filter: drop-shadow(0px 0px 0.15em #45d3e0);
+				filter: drop-shadow(0px 0px 0.25em #45d3e0);
 			}
 			25% {
-				filter: drop-shadow(0px 0px 0.5em #45d3e0);
+				filter: drop-shadow(0px 0px 0.75em #45d3e0);
 			}
 			50% {
-				filter: drop-shadow(0px 0px 1em #45d3e0);
+				filter: drop-shadow(0px 0px 2em #45d3e0);
 			}
 			75% {
-				filter: drop-shadow(0px 0px 0.5em #45d3e0);
+				filter: drop-shadow(0px 0px 0.75em #45d3e0);
 			}
 			100% {
-				filter: drop-shadow(0px 0px 0.15em #45d3e0);
+				filter: drop-shadow(0px 0px 0.25em #45d3e0);
 			}
 		}
 		@media (width < 950px) {
