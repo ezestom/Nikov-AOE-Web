@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { toast, Toaster } from "sonner";
 import x from "../../icons/x.svg";
-import "./Form.css";
+import "./ReactForm.css";
 
-export function Form() {
+export function ReactForm() {
 	const [dialog, setDialog] = useState(false);
 	const [isLoading, setIsLoading] = useState(false);
 
