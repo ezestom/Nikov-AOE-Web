@@ -1,7 +1,7 @@
 ---
 import Card from "../components/Card.astro";
 import { Image } from "astro:assets";
-import aoe2 from "../img/aoe2.webp";
+import aoe2 from "../img/home_picture.jpg";
 import Layout from "../layouts/Layout.astro";
 import { Youtube } from "../components/Youtube.jsx";
 import LogoAge from "../components/LogoAge.astro";
@@ -12,6 +12,15 @@ import logoSebaOficial from "../img/logoSebaOficial.jpg";
 <!-- componente home en ASTRO -->
 <Layout title="Sebastian 2002 - AOE Pro Player">
 	<section class="h-screen p-0 m-0 w-screen flex items-center justify-center">
+		<a
+			href="https://librecounter.org/referer/show"
+			target="_blank"
+			class="w-2 absolute bottom-16 right-16 mx-auto ml-7 -z-1">
+			<img
+				src="https://librecounter.org/counter.svg"
+				referrer-policy="unsafe-url"
+			/>
+		</a>
 		<LogoSeba />
 		<ul
 			class="grid grid-cols-6 grid-rows-5 gap-3 h-[90vh] max-w-[1100px] z-20">
@@ -72,9 +81,9 @@ import logoSebaOficial from "../img/logoSebaOficial.jpg";
 						>♘</span
 					>
 					<Card
-						href="/next"
+						href="/merchandising"
 						titleEsp="Merchandising"
-						bodyEsp="Sección de merchandising, próximamente disponible. ¡Estate atento!"
+						bodyEsp="Sección de merchandising, próximamente disponible. ¡Estate atento!🚫"
 					/>
 				</li>
 				<!-- Contacto Form -->
@@ -168,7 +177,7 @@ import logoSebaOficial from "../img/logoSebaOficial.jpg";
 			transition: all 0.3s ease-in-out;
 		}
 		.about {
-			background-color: rgb(35 38 45 / 85%);
+			background-color: #23262dd9;
 			display: flex;
 			align-items: center;
 			justify-content: center;

@@ -2,15 +2,12 @@ import { useState, useEffect } from "react";
 import "./GalleryComponent.css";
 
 const images = [
-	"https://static-cdn.jtvnw.net/cf_vods/dgeft87wbj63p/4e57f6b2a2a3b3e982b9_nili_aoe_79686960877_9065345201//thumb/thumb1766066160-640x360.jpg",
-	"https://i.ytimg.com/vi/YNuqq-PEVbo/hqdefault.jpg?v=624f6dde",
-	"https://i.ytimg.com/vi/c_Dws6e5JJM/maxresdefault.jpg",
-	"https://pbs.twimg.com/media/F44dc9XXUAA5u6V.jpg",
-	"https://i.ytimg.com/vi/Ghq4ql45z8Y/maxresdefault.jpg",
-	"https://i.ytimg.com/vi/3AVBhB3lga4/maxresdefault.jpg",
-	"https://www.aoezone.net/data/groups/Photos/o/10/21357/84d05c113d352bb688df1d45152a5dae.jpg",
-	"https://www.aoezone.net/data/groups/Photos/o/10/21357/292dd3437037bbc1403694e1d7990a36.jpg",
-	"https://i.ytimg.com/vi/qwxW8ds9qgY/maxresdefault.jpg",
+	"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToUXz5SXuvsrdwp7dIMj2CDX5Orwkyj3_wzbBap6O2AcEpEhpZckVqxiHWs1ACkBc45Yk&usqp=CAU",
+	"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx_3daVedhSag0wOs7knOQESrBwmCnV5aU-g&usqp=CAU",
+	"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToUXz5SXuvsrdwp7dIMj2CDX5Orwkyj3_wzbBap6O2AcEpEhpZckVqxiHWs1ACkBc45Yk&usqp=CAU",
+	"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx_3daVedhSag0wOs7knOQESrBwmCnV5aU-g&usqp=CAU",
+	"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToUXz5SXuvsrdwp7dIMj2CDX5Orwkyj3_wzbBap6O2AcEpEhpZckVqxiHWs1ACkBc45Yk&usqp=CAU",
+	"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx_3daVedhSag0wOs7knOQESrBwmCnV5aU-g&usqp=CAU",
 ];
 
 const loadImage = (path) => {
