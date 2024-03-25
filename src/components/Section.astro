@@ -7,22 +7,42 @@ import instagram from "../icons/instagram.svg";
 import twitch from "../icons/twitch.svg";
 import email from "../icons/email.svg";
 import LogoAge from "./LogoAge.astro";
-import LogoNicov from "./LogoSeba.astro";
+import LogoSeba from "./LogoSeba.astro";
 import logoSebaOficial from "../img/logoSebaOficial.jpg";
 
 interface Astro {
 	props: {
 		titleEsp: string;
-		bodyEsp: string;
+		bodyEsp: any;
 		icon?: string;
+		link1?: string;
+		linkName1?: string;
+		link2?: string;
+		linkName2?: string;
+		link3?: string;
+		linkName3?: string;
+		link4?: string;
+		linkName4?: string;
 	};
 }
 
-const { titleEsp, bodyEsp, icon } = Astro.props;
+const {
+	titleEsp,
+	bodyEsp,
+	icon,
+	link1,
+	linkName1,
+	link2,
+	linkName2,
+	link3,
+	linkName3,
+	link4,
+	linkName4,
+} = Astro.props;
 ---
 
 <section class="flex items-center justify-center">
-	<LogoNicov />
+	<LogoSeba />
 	<article
 		class="grid grid-cols-6 grid-rows-5 gap-3 h-[90vh] w-[1100px] z-20">
 		<div class="col-span-4 row-span-1">
@@ -94,10 +114,34 @@ const { titleEsp, bodyEsp, icon } = Astro.props;
 		</div>
 
 		<div
-			class="col-span-4 row-span-4 flex items-start justify-start overflow-auto p-5 text-balance z-10 relative">
+			class="col-span-4 row-span-4 flex items-start justify-start overflow-auto p-5 text-balance z-10 relative flex-col">
 			<p class="text-xl text-start text-balance">
 				{bodyEsp}
 			</p>
+			<a
+				href={link1}
+				target="_blank"
+				class="text py-2 w-full text-center my-2 hover:scale-105 hover:text-[#45d3e0] hover:underline text-xl"
+				>{linkName1}</a
+			>
+			<a
+				href={link2}
+				target="_blank"
+				class="text py-2 w-full text-center my-2 hover:scale-105 hover:text-[#45d3e0] hover:underline text-xl"
+				>{linkName2}</a
+			>
+			<a
+				href={link3}
+				target="_blank"
+				class="text py-2 w-full text-center my-2 hover:scale-105 hover:text-[#45d3e0] hover:underline text-xl"
+				>{linkName3}</a
+			>
+			<a
+				href={link4}
+				target="_blank"
+				class="text py-2 w-full text-center my-2 hover:scale-105 hover:text-[#45d3e0] hover:underline text-xl"
+				>{linkName4}</a
+			>
 		</div>
 	</article>
 	<a
