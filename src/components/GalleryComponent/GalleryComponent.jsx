@@ -2,12 +2,13 @@ import { useState, useEffect } from "react";
 import "./GalleryComponent.css";
 
 const images = [
-	"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToUXz5SXuvsrdwp7dIMj2CDX5Orwkyj3_wzbBap6O2AcEpEhpZckVqxiHWs1ACkBc45Yk&usqp=CAU",
-	"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx_3daVedhSag0wOs7knOQESrBwmCnV5aU-g&usqp=CAU",
-	"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToUXz5SXuvsrdwp7dIMj2CDX5Orwkyj3_wzbBap6O2AcEpEhpZckVqxiHWs1ACkBc45Yk&usqp=CAU",
-	"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx_3daVedhSag0wOs7knOQESrBwmCnV5aU-g&usqp=CAU",
-	"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToUXz5SXuvsrdwp7dIMj2CDX5Orwkyj3_wzbBap6O2AcEpEhpZckVqxiHWs1ACkBc45Yk&usqp=CAU",
-	"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx_3daVedhSag0wOs7knOQESrBwmCnV5aU-g&usqp=CAU",
+	"https://images8.alphacoders.com/680/680254.jpg",
+	"https://i.blogs.es/be0c8f/241019-age2/1366_2000.jpg",
+	"https://c4.wallpaperflare.com/wallpaper/379/318/378/age-of-empires-age-of-empires-ii-hd-wallpaper-preview.jpg",
+	"https://c4.wallpaperflare.com/wallpaper/598/421/289/age-of-empires-age-of-empires-ii-hd-wallpaper-preview.jpg",
+	"https://i.pinimg.com/originals/d2/15/1c/d2151caf69dca63b41955e143b3ba2bc.png",
+	"https://steamuserimages-a.akamaihd.net/ugc/1252512422690044541/A17F9A446669E4B7630A4E34AFD08AE8CE20A280/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
+	"https://w0.peakpx.com/wallpaper/811/15/HD-wallpaper-age-of-empires-ii-the-middle-age-siege-ultra-games-age-of-empires-game-strategy-videogame-ageofempires.jpg",
 ];
 
 const loadImage = (path) => {
